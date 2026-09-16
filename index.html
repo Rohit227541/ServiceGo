@@ -81,10 +81,6 @@ tailwind.config = {
     </nav>
     <div class="hidden lg:flex items-center gap-3">
       <button id="themeToggle" aria-label="Toggle dark mode" class="w-9 h-9 rounded-full border border-zinc-200 grid place-items-center hover:bg-zinc-50 transition"><svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-      <button id="langToggle" aria-label="Switch language" class="flex items-center gap-1 bg-zinc-900 text-white rounded-full p-1 text-xs font-bold">
-        <span id="langEn" class="px-3 py-1.5 rounded-full bg-white text-zinc-900 transition">EN</span>
-        <span id="langHi" class="px-3 py-1.5 rounded-full text-white/80 transition">हि</span>
-      </button>
       <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20want%20to%20know%20more%20about%20ServiceGo" target="_blank" rel="noopener" class="text-sm font-medium px-4 py-2 rounded-full hover:bg-zinc-50 transition">WhatsApp</a>
       <a href="http://crm.servicego.tech/" target="_blank" rel="noopener" class="bg-nearblack text-white text-sm font-semibold px-6 py-[11px] rounded-full hover:bg-zinc-900 transition shadow-sm" data-i18n="navGetStarted">Get Started</a>
     </div>
@@ -95,13 +91,6 @@ tailwind.config = {
   <!-- mobile menu -->
   <div id="mobileMenu" class="hidden lg:hidden border-t border-zinc-100 bg-white">
     <nav class="px-5 py-4 flex flex-col gap-3 text-[15px] font-medium">
-      <div class="flex items-center justify-between pb-2 border-b border-zinc-100">
-        <span class="text-sm font-semibold text-zinc-600">Language / भाषा</span>
-        <button id="langToggleMobile" class="flex items-center gap-1 bg-zinc-900 text-white rounded-full p-1 text-xs font-bold">
-          <span class="langEnM px-3 py-1 rounded-full bg-white text-zinc-900">EN</span>
-          <span class="langHiM px-3 py-1 rounded-full text-white/80">हि</span>
-        </button>
-      </div>
       <div class="flex items-center justify-between pb-2">
         <span class="text-sm font-semibold text-zinc-600">Theme / थीम</span>
         <button id="themeToggleMobile" class="w-9 h-9 rounded-full border border-zinc-200 grid place-items-center"><svg id="themeIconM" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
@@ -1178,16 +1167,9 @@ tailwind.config = {
     localStorage.setItem('sg_lang', l);
     document.documentElement.lang=l;
   }
-  const saved=localStorage.getItem('sg_lang')||'en';
-  applyLang(saved);
-  document.getElementById('langToggle')?.addEventListener('click',()=>{
-    const cur=localStorage.getItem('sg_lang')||'en';
-    applyLang(cur==='en'?'hi':'en');
-  });
-  document.getElementById('langToggleMobile')?.addEventListener('click',()=>{
-    const cur=localStorage.getItem('sg_lang')||'en';
-    applyLang(cur==='en'?'hi':'en');
-  });
+  // Force English (toggle removed)
+  localStorage.setItem('sg_lang','en');
+  applyLang('en');
 
   // Pricing toggle Lifetime / Monthly / Yearly
   const paneLifetime=document.getElementById('pane-lifetime');
