@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServiceGo by Kodexive — Complete Business Management Solution for Service Businesses</title>
+<meta name="description" content="ServiceGo by Kodexive Technologies is a complete business management solution for service-based businesses. CRM + Mobile App + Website to manage customers, complaints, technicians, appointments, payments and daily operations. Lifetime plan starting ₹25,000.">
+<meta name="keywords" content="ServiceGo, Kodexive, CRM, service business management, technician management, AMC management, service CRM India">
+<link rel="canonical" href="https://servicego.kodexive.com/">
+<meta property="og:title" content="ServiceGo — Manage Your Service Business. All in One Place.">
+<meta property="og:description" content="CRM + Mobile Application + Website for service businesses. Lifetime plan. One-time setup.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#009490">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        teal: { DEFAULT: '#009490', dark: '#007a77', light: '#e6f5f4', 50:'#f0faf9' },
+        nearblack: '#000001',
+      },
+      fontFamily: {
+        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+      },
+      borderRadius: { '4xl':'32px' }
+    }
+  }
+}
+</script>
+<style>
+  *{scroll-behavior:smooth}
+  body{font-family: Inter, sans-serif; color:#000001; -webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Plus Jakarta Sans",sans-serif; letter-spacing:-0.02em}
+  .reveal{opacity:0; transform:translateY(18px); transition: all .7s cubic-bezier(.22,1,.36,1)}
+  .reveal.in{opacity:1; transform:none}
+  .float{animation: float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .glass{backdrop-filter: blur(12px)}
+  /* hide scrollbar for workflow */
+  .no-scrollbar::-webkit-scrollbar{display:none}
+  .no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none}
+</style>
+</head>
+<body class="bg-white antialiased overflow-x-hidden">
+
+<!-- NAVBAR -->
+<header id="navbar" class="sticky top-0 z-50 bg-white/80 glass border-b border-zinc-100">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6 h-[72px] flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-2.5">
+      <span class="w-9 h-9 rounded-xl bg-[#009490] flex items-center justify-center text-white font-extrabold text-[18px] tracking-tighter">S</span>
+      <span class="leading-none">
+        <span class="font-jakarta font-extrabold text-[21px] tracking-tight text-nearblack block">ServiceGo</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[14px] font-medium text-zinc-600">
+      <a href="#home" class="hover:text-nearblack transition">Home</a>
+      <a href="#features" class="hover:text-nearblack transition">Features</a>
+      <a href="#how-it-works" class="hover:text-nearblack transition">How It Works</a>
+      <a href="#pricing" class="hover:text-nearblack transition">Pricing</a>
+      <a href="#faq" class="hover:text-nearblack transition">FAQ</a>
+      <a href="#contact" class="hover:text-nearblack transition">Contact</a>
+    </nav>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20want%20to%20know%20more%20about%20ServiceGo" target="_blank" rel="noopener" class="text-sm font-medium px-4 py-2 rounded-full hover:bg-zinc-50 transition">WhatsApp</a>
+      <a href="http://crm.servicego.tech/" target="_blank" rel="noopener" class="bg-nearblack text-white text-sm font-semibold px-6 py-[11px] rounded-full hover:bg-zinc-900 transition shadow-sm">Get Started</a>
+    </div>
+    <button id="menuBtn" aria-label="Open menu" class="lg:hidden w-10 h-10 rounded-full border border-zinc-200 grid place-items-center">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-zinc-100 bg-white">
+    <nav class="px-5 py-4 flex flex-col gap-3 text-[15px] font-medium">
+      <a href="#home" class="py-2">Home</a>
+      <a href="#features" class="py-2">Features</a>
+      <a href="#how-it-works" class="py-2">How It Works</a>
+      <a href="#pricing" class="py-2">Pricing</a>
+      <a href="#faq" class="py-2">FAQ</a>
+      <a href="#contact" class="py-2">Contact</a>
+      <div class="flex gap-3 pt-3">
+        <a href="https://wa.me/919149671713" target="_blank" class="flex-1 text-center border border-zinc-200 rounded-full py-3 font-semibold">WhatsApp Us</a>
+        <a href="http://crm.servicego.tech/" target="_blank" rel="noopener" class="flex-1 text-center bg-nearblack text-white rounded-full py-3 font-semibold">Get Started</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative overflow-hidden bg-white">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6 pt-10 lg:pt-16 pb-10 lg:pb-8 grid lg:grid-cols-[1.05fr_1.15fr] gap-10 items-center">
+    <div class="reveal">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase bg-teal-50 border border-[#009490]/15 text-[#009490] px-3.5 py-1.5 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#009490] animate-pulse"></span>
+        Complete Business Management Solution
+      </span>
+      <h1 class="font-jakarta font-extrabold text-[38px] lg:text-[56px] leading-[0.95] tracking-[-0.03em] mt-5">
+        Manage Your<br>
+        <span class="relative inline-block">Service Business. <span class="absolute left-0 right-0 bottom-1 h-[10px] bg-[#009490]/10 -z-10"></span></span><br>
+        <span class="text-[#009490]">All in One Place.</span>
+      </h1>
+      <p class="mt-5 text-[16px] lg:text-[17px] leading-relaxed text-zinc-600 max-w-[560px]">
+        ServiceGo gives your business a powerful CRM, dedicated mobile application and professional website — helping you manage customers, complaints, technicians, appointments, payments and daily operations from one platform.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#pricing" class="inline-flex items-center gap-2 bg-[#009490] text-white font-semibold px-7 py-3.5 rounded-full hover:bg-[#007a77] transition shadow-[0_8px_24px_rgba(0,148,144,0.25)]">
+          Get ServiceGo
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%27m%20interested%20in%20ServiceGo" target="_blank" class="inline-flex items-center gap-2 bg-white border border-zinc-200 font-semibold px-7 py-3.5 rounded-full hover:bg-zinc-50 transition">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#009490"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.54 2 2.07 6.45 2.07 11.94c0 1.75.46 3.46 1.33 4.96L2 22l5.25-1.38a9.97 9.97 0 0 0 4.79 1.22h.01c5.49 0 9.96-4.45 9.96-9.93 0-2.65-1.03-5.14-2.91-7zM12.05 20.03h-.01a8.17 8.17 0 0 1-4.16-1.14l-.3-.18-3.12.82.83-3.04-.2-.31A8.19 8.19 0 0 1 3.82 12c0-4.51 3.68-8.18 8.22-8.18 2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.81c0 4.51-3.68 8-8.22 8zm4.51-6.12c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43l-.48-.01c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+          Talk to Us on WhatsApp
+        </a>
+      </div>
+      <div class="mt-8 flex items-center gap-6 text-sm">
+        <div class="flex -space-x-2">
+          <img src="https://i.pravatar.cc/100?img=11" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="" loading="lazy">
+          <img src="https://i.pravatar.cc/100?img=15" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="" loading="lazy">
+          <img src="https://i.pravatar.cc/100?img=8" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="" loading="lazy">
+        </div>
+        <div class="leading-tight">
+          <div class="font-semibold text-nearblack">Trusted by 500+ service businesses</div>
+          <div class="text-zinc-500 text-xs">Lifetime plan • One-time setup</div>
+        </div>
+        <div class="hidden sm:flex items-center gap-1.5 ml-2">
+          <span class="text-[#009490]">★★★★★</span><span class="text-xs font-medium text-zinc-600">4.9/5 rating</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard + Phone Mockup -->
+    <div class="relative lg:h-[560px] flex items-center justify-center reveal">
+      <!-- glow -->
+      <div class="absolute inset-0 bg-gradient-to-br from-teal-50 via-white to-zinc-50 rounded-[32px] -z-10"></div>
+      <div class="absolute -top-6 -right-6 w-72 h-72 bg-[#009490]/10 rounded-full blur-3xl -z-10"></div>
+
+      <div class="relative w-full max-w-[640px]">
+        <!-- Dashboard Card -->
+        <div class="float bg-white rounded-[24px] border border-zinc-200 shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden">
+          <!-- top bar -->
+          <div class="h-11 flex items-center justify-between px-4 border-b border-zinc-100 bg-zinc-50/60">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-zinc-200"></span><span class="w-3 h-3 rounded-full bg-zinc-200"></span><span class="w-3 h-3 rounded-full bg-zinc-200"></span>
+              <span class="ml-3 text-xs font-medium text-zinc-500">servicego.kodexive.com • CRM</span>
+            </div>
+            <span class="hidden sm:inline-flex text-[11px] font-semibold bg-white border border-zinc-200 px-2.5 py-1 rounded-full">● Live Dashboard</span>
+          </div>
+          <div class="grid grid-cols-[170px_1fr] lg:grid-cols-[190px_1fr]">
+            <!-- sidebar -->
+            <div class="bg-nearblack text-white p-4 hidden sm:block">
+              <div class="flex items-center gap-2 mb-6">
+                <span class="w-7 h-7 rounded-lg bg-[#009490] grid place-items-center text-xs font-bold">S</span>
+                <span class="text-sm font-bold">ServiceGo CRM</span>
+              </div>
+              <div class="space-y-1 text-[13px]">
+                <div class="bg-white text-nearblack rounded-lg px-3 py-2 font-semibold flex items-center gap-2">◼ Dashboard</div>
+                <div class="px-3 py-2 text-zinc-400 flex justify-between">Customers <span class="bg-zinc-800 px-1.5 rounded text-xs">1.2k</span></div>
+                <div class="px-3 py-2 text-zinc-400">Complaints</div>
+                <div class="px-3 py-2 text-zinc-400">Technicians</div>
+                <div class="px-3 py-2 text-zinc-400">Appointments</div>
+                <div class="px-3 py-2 text-zinc-400">AMC</div>
+                <div class="px-3 py-2 text-zinc-400">Payments</div>
+              </div>
+              <div class="mt-6 bg-[#009490] rounded-xl p-3">
+                <div class="text-xs font-semibold">Today's Revenue</div>
+                <div class="text-lg font-bold">₹48,250</div>
+                <div class="text-[11px] opacity-80">↑ 12% vs yesterday</div>
+              </div>
+            </div>
+            <!-- main -->
+            <div class="p-4 lg:p-5">
+              <div class="flex items-center justify-between">
+                <h3 class="font-semibold text-sm">Overview</h3>
+                <span class="text-xs bg-teal-50 text-[#009490] border border-[#009490]/15 px-2.5 py-1 rounded-full font-medium">This Month</span>
+              </div>
+              <div class="grid grid-cols-3 gap-3 mt-4">
+                <div class="bg-zinc-50 border border-zinc-100 rounded-xl p-3">
+                  <div class="text-[11px] text-zinc-500 font-medium">Active Jobs</div>
+                  <div class="text-xl font-extrabold">42</div>
+                  <div class="text-[11px] text-[#009490] font-medium">↑ 8 ongoing</div>
+                </div>
+                <div class="bg-zinc-50 border border-zinc-100 rounded-xl p-3">
+                  <div class="text-[11px] text-zinc-500 font-medium">Pending Payments</div>
+                  <div class="text-xl font-extrabold">₹1.8L</div>
+                  <div class="text-[11px] text-zinc-500">23 invoices</div>
+                </div>
+                <div class="bg-[#009490] text-white rounded-xl p-3">
+                  <div class="text-[11px] opacity-80">AMC Renewals</div>
+                  <div class="text-xl font-bold">18</div>
+                  <div class="text-[11px] opacity-80">Due this week</div>
+                </div>
+              </div>
+              <div class="mt-4 border border-zinc-100 rounded-xl overflow-hidden">
+                <div class="px-3 py-2.5 flex items-center justify-between bg-zinc-50 border-b border-zinc-100">
+                  <span class="text-xs font-semibold">Recent Complaints</span>
+                  <span class="text-xs text-zinc-500">View all →</span>
+                </div>
+                <div class="divide-y divide-zinc-100 text-xs">
+                  <div class="px-3 py-2.5 flex items-center justify-between">
+                    <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-zinc-100 grid place-items-center">👤</span><div><div class="font-semibold">Rahul Sharma</div><div class="text-zinc-500">AC Repair • #SR-1024</div></div></div>
+                    <span class="bg-amber-50 text-amber-700 border border-amber-200 px-2 py-1 rounded-full text-[11px] font-medium" style="background:#fffbeb; color:#92400e; border-color:#fde68a">In Progress</span>
+                  </div>
+                  <div class="px-3 py-2.5 flex items-center justify-between">
+                    <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-zinc-100 grid place-items-center">👤</span><div><div class="font-semibold">Priya Patel</div><div class="text-zinc-500">Washing Machine • #SR-1023</div></div></div>
+                    <span class="bg-teal-50 text-[#009490] border border-[#009490]/15 px-2 py-1 rounded-full text-[11px] font-medium">Assigned</span>
+                  </div>
+                  <div class="px-3 py-2.5 flex items-center justify-between">
+                    <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-zinc-100 grid place-items-center">👤</span><div><div class="font-semibold">Amit Verma</div><div class="text-zinc-500">AMC Service • #SR-1022</div></div></div>
+                    <span class="bg-zinc-900 text-white px-2 py-1 rounded-full text-[11px] font-medium">Completed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone Mockup -->
+        <div class="absolute -right-2 lg:-right-6 -bottom-10 lg:bottom-6 w-[150px] lg:w-[190px] bg-nearblack rounded-[28px] p-2 shadow-[0_20px_50px_rgba(0,0,0,0.25)] border-[6px] border-nearblack float" style="animation-delay: .8s">
+          <div class="bg-white rounded-[20px] overflow-hidden">
+            <div class="h-6 bg-nearblack flex justify-center items-center"><div class="w-16 h-3 bg-zinc-800 rounded-full"></div></div>
+            <div class="px-3 pt-3 pb-2 bg-[#009490] text-white">
+              <div class="text-[11px] opacity-80">Good Morning</div>
+              <div class="font-bold text-sm leading-tight">ServiceGo Mobile</div>
+              <div class="mt-2 grid grid-cols-2 gap-2">
+                <div class="bg-white text-nearblack rounded-xl p-2 text-center"><div class="text-lg font-extrabold">12</div><div class="text-[10px]">Today's Jobs</div></div>
+                <div class="bg-black/15 backdrop-blur rounded-xl p-2 text-center border border-white/20"><div class="text-lg font-bold">₹18k</div><div class="text-[10px]">Collected</div></div>
+              </div>
+            </div>
+            <div class="p-2.5 space-y-2">
+              <div class="flex items-center gap-2 bg-zinc-50 border border-zinc-100 rounded-xl p-2">
+                <span class="w-8 h-8 rounded-lg bg-[#009490] text-white grid place-items-center text-xs">◉</span>
+                <div class="flex-1"><div class="text-xs font-semibold leading-none">AC Service #1042</div><div class="text-[11px] text-zinc-500">Assigned • 10:30 AM</div></div>
+                <span class="w-6 h-6 rounded-full bg-nearblack text-white grid place-items-center text-[10px]">→</span>
+              </div>
+              <div class="flex items-center gap-2 bg-zinc-50 border border-zinc-100 rounded-xl p-2">
+                <span class="w-8 h-8 rounded-lg bg-zinc-900 text-white grid place-items-center text-xs">◎</span>
+                <div class="flex-1"><div class="text-xs font-semibold leading-none">Verify Job</div><div class="text-[11px] text-zinc-500">OTP • Location</div></div>
+              </div>
+              <div class="bg-nearblack text-white rounded-xl p-2.5 flex items-center justify-between">
+                <span class="text-xs font-medium">Start Navigation</span><span class="bg-[#009490] w-7 h-7 rounded-full grid place-items-center">↗</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="py-14 lg:py-20 bg-zinc-50 border-y border-zinc-100">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <h2 class="font-jakarta font-extrabold text-[30px] lg:text-[42px] leading-none">Still Managing Your<br>Business Manually?</h2>
+      <p class="mt-3 text-zinc-600">Service businesses lose time, money and customers without a proper system. Sound familiar?</p>
+    </div>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="reveal bg-white rounded-[20px] border border-zinc-200 p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-zinc-900 text-white grid place-items-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h3 class="mt-4 font-bold text-[16px]">Manual Management</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-zinc-600">Registers, WhatsApp groups and spreadsheets lead to errors, delays and lost records.</p>
+      </div>
+      <div class="reveal bg-white rounded-[20px] border border-zinc-200 p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition" style="transition-delay:.05s">
+        <div class="w-10 h-10 rounded-xl bg-zinc-900 text-white grid place-items-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 8v5l3 2"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h3 class="mt-4 font-bold">Missed Follow-ups</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-zinc-600">No reminders for AMC renewals, service due dates and customer follow-ups.</p>
+      </div>
+      <div class="reveal bg-white rounded-[20px] border border-zinc-200 p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition" style="transition-delay:.1s">
+        <div class="w-10 h-10 rounded-xl bg-zinc-900 text-white grid place-items-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="mt-4 font-bold">Team Tracking</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-zinc-600">No visibility on technician location, job status and daily performance.</p>
+      </div>
+      <div class="reveal bg-white rounded-[20px] border border-zinc-200 p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition" style="transition-delay:.15s">
+        <div class="w-10 h-10 rounded-xl bg-zinc-900 text-white grid place-items-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="mt-4 font-bold">Payment Tracking</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-zinc-600">Pending balances, part costs and collections are hard to track and reconcile.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION DARK -->
+<section class="bg-nearblack text-white py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="text-center max-w-3xl mx-auto reveal">
+      <span class="inline-flex text-xs font-semibold tracking-widest uppercase bg-white/10 border border-white/15 px-3 py-1.5 rounded-full">The ServiceGo Solution</span>
+      <h2 class="mt-4 font-jakarta font-extrabold text-[30px] lg:text-[44px] leading-none">Everything Your Service<br><span class="text-[#009490]">Business Needs</span></h2>
+      <p class="mt-4 text-zinc-400">One powerful CRM connects every part of your operation — from customer to payment.</p>
+    </div>
+
+    <div class="mt-12 relative flex justify-center reveal">
+      <!-- central dashboard -->
+      <div class="relative bg-white rounded-[20px] p-4 lg:p-6 w-full max-w-[560px] shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2"><span class="w-8 h-8 rounded-lg bg-nearblack grid place-items-center text-white font-bold text-sm">S</span><span class="font-jakarta font-bold text-nearblack">ServiceGo CRM</span></div>
+          <span class="text-xs bg-[#009490] text-white px-3 py-1 rounded-full font-semibold">● Live Sync</span>
+        </div>
+        <div class="mt-5 grid grid-cols-3 gap-3">
+          <div class="bg-zinc-50 border border-zinc-100 rounded-xl p-3 text-center"><div class="text-lg font-extrabold text-nearblack">1.2k</div><div class="text-[11px] text-zinc-500">Customers</div></div>
+          <div class="bg-zinc-50 border border-zinc-100 rounded-xl p-3 text-center"><div class="text-lg font-extrabold text-nearblack">42</div><div class="text-[11px] text-zinc-500">Active Jobs</div></div>
+          <div class="bg-[#009490] rounded-xl p-3 text-center text-white"><div class="text-lg font-bold">₹1.8L</div><div class="text-[11px] opacity-90">Payments</div></div>
+        </div>
+        <div class="mt-4 h-24 rounded-xl border border-zinc-100 bg-zinc-50 p-3 flex items-end gap-1.5">
+          <div class="flex-1 bg-zinc-200 rounded-t" style="height:40%"></div><div class="flex-1 bg-zinc-200 rounded-t" style="height:65%"></div><div class="flex-1 bg-zinc-200 rounded-t" style="height:50%"></div><div class="flex-1 bg-[#009490] rounded-t" style="height:85%"></div><div class="flex-1 bg-zinc-200 rounded-t" style="height:60%"></div><div class="flex-1 bg-zinc-200 rounded-t" style="height:70%"></div><div class="flex-1 bg-zinc-200 rounded-t" style="height:45%"></div>
+        </div>
+        <!-- floating labels - desktop -->
+        <div class="hidden lg:block">
+          <div class="absolute -left-28 top-10 bg-white text-nearblack border border-zinc-200 shadow-lg rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-zinc-900 text-white grid place-items-center text-xs">◉</span> Customers</div>
+          <div class="absolute -left-32 top-1/2 -translate-y-1/2 bg-white text-nearblack border border-zinc-200 shadow-lg rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-[#009490] text-white grid place-items-center text-xs">✦</span> Complaints</div>
+          <div class="absolute -left-28 bottom-12 bg-white text-nearblack border border-zinc-200 shadow-lg rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-zinc-900 text-white grid place-items-center text-xs">◈</span> Technicians</div>
+          <div class="absolute -right-32 top-10 bg-white text-nearblack border border-zinc-200 shadow-lg rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-[#009490] text-white grid place-items-center text-xs">◎</span> Appointments</div>
+          <div class="absolute -right-28 top-1/2 -translate-y-1/2 bg-white text-nearblack border border-zinc-200 shadow-lg rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-zinc-900 text-white grid place-items-center text-xs">₹</span> Payments</div>
+          <div class="absolute -right-20 bottom-12 bg-white text-nearblack border border-zinc-200 shadow-lg rounded-full px-4 py-2 text-sm font-semibold flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-[#009490] text-white grid place-items-center text-xs">◐</span> AMC</div>
+        </div>
+      </div>
+    </div>
+    <!-- mobile labels -->
+    <div class="lg:hidden mt-6 flex flex-wrap justify-center gap-2">
+      <span class="bg-white text-nearblack rounded-full px-4 py-2 text-sm font-semibold border border-zinc-200">Customers</span>
+      <span class="bg-white text-nearblack rounded-full px-4 py-2 text-sm font-semibold border border-zinc-200">Complaints</span>
+      <span class="bg-white text-nearblack rounded-full px-4 py-2 text-sm font-semibold border border-zinc-200">Technicians</span>
+      <span class="bg-[#009490] text-white rounded-full px-4 py-2 text-sm font-semibold">Appointments</span>
+      <span class="bg-white text-nearblack rounded-full px-4 py-2 text-sm font-semibold border border-zinc-200">Payments</span>
+      <span class="bg-white text-nearblack rounded-full px-4 py-2 text-sm font-semibold border border-zinc-200">AMC</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="py-16 lg:py-24 bg-white">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 reveal">
+      <div>
+        <span class="text-xs font-semibold tracking-widest uppercase text-[#009490]">Features</span>
+        <h2 class="mt-2 font-jakarta font-extrabold text-[30px] lg:text-[42px] leading-none">Powerful Features.<br>Simple Management.</h2>
+      </div>
+      <p class="text-zinc-600 max-w-[420px] lg:text-right">Everything you need to run your service business efficiently — built for real-world operations.</p>
+    </div>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- 9 cards -->
+      <div class="reveal rounded-[20px] border border-zinc-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <h3 class="mt-4 font-bold">Dashboard</h3><p class="mt-1 text-sm text-zinc-600 leading-relaxed">Real-time overview of jobs, revenue, pending payments and team performance.</p>
+      </div>
+      <div class="reveal rounded-[20px] border border-zinc-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-[#009490] text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3 class="mt-4 font-bold">Customer Management</h3><p class="mt-1 text-sm text-zinc-600 leading-relaxed">Complete customer profiles, history, AMC status and service records in one place.</p>
+      </div>
+      <div class="reveal rounded-[20px] border border-zinc-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 13H8"/><path d="M16 17H8"/><path d="M13 13h2"/></svg></div>
+        <h3 class="mt-4 font-bold">Complaints & Orders</h3><p class="mt-1 text-sm text-zinc-600 leading-relaxed">Track every complaint and order from creation to completion with status updates.</p>
+      </div>
+      <div class="reveal rounded-[20px] border border-zinc-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11v2"/><path d="M22 8a4 4 0 0 1 0 7"/></svg></div>
+        <h3 class="mt-4 font-bold">Technician Management</h3><p class="mt-1 text-sm text-zinc-600 leading-relaxed">Assign jobs, track availability, monitor performance and manage field team.</p>
+      </div>
+      <div class="reveal rounded-[20px] border border-zinc-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-[#009490] text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3 class="mt-4 font-bold">Appointments</h3><p class="mt-1 text-sm text-zinc-600 leading-relaxed">Schedule, reschedule and manage appointments with automated reminders.</p>
+      </div>
+      <div class="reveal rounded-[20px] border border-zinc-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3 class="mt-4 font-bold">AMC Management</h3><p class="mt-1 text-sm text-zinc-600 leading-relaxed">Manage annual maintenance contracts, renewals and service schedules effortlessly.</p>
+      </div>
+      <div class="reveal rounded-[20px] border border-zinc-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15h6"/></svg></div>
+        <h3 class="mt-4 font-bold">Parts Management</h3><p class="mt-1 text-sm text-zinc-600 leading-relaxed">Track spare parts, inventory usage and costs for every job.</p>
+      </div>
+      <div class="reveal rounded-[20px] border border-zinc-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-[#009490] text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3 class="mt-4 font-bold">Payments</h3><p class="mt-1 text-sm text-zinc-600 leading-relaxed">Track payments, balances, invoices and collections with complete transparency.</p>
+      </div>
+      <div class="reveal rounded-[20px] border border-zinc-200 p-6 bg-white hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 8a6 6 0 0 1 12 0c0 7-6 11-6 11S6 15 6 8z"/><path d="M10 12h4"/></svg></div>
+        <h3 class="mt-4 font-bold">Notifications</h3><p class="mt-1 text-sm text-zinc-600 leading-relaxed">Automated alerts for jobs, appointments, payments and follow-ups.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE APP -->
+<section class="py-16 lg:py-24 bg-zinc-50 border-y border-zinc-100">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6 grid lg:grid-cols-2 gap-10 items-center">
+    <div class="order-2 lg:order-1 relative flex justify-center reveal">
+      <div class="absolute w-[340px] h-[340px] bg-[#009490]/10 rounded-full blur-3xl"></div>
+      <div class="relative w-[280px] bg-nearblack rounded-[36px] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.2)] border-[8px] border-nearblack">
+        <div class="bg-white rounded-[28px] overflow-hidden">
+          <div class="h-7 bg-nearblack flex justify-center items-center"><div class="w-20 h-3.5 bg-zinc-800 rounded-full"></div></div>
+          <div class="bg-[#009490] text-white px-4 pt-4 pb-4">
+            <div class="text-xs opacity-80">ServiceGo</div><div class="font-bold text-lg -mt-1">Mobile App</div>
+            <div class="mt-3 bg-white rounded-2xl p-3 text-nearblack flex items-center gap-3">
+              <img src="https://i.pravatar.cc/100?img=12" class="w-10 h-10 rounded-full" alt="" loading="lazy">
+              <div><div class="text-sm font-bold">Hi, Rajesh</div><div class="text-xs text-zinc-500">Technician • 12 jobs today</div></div>
+              <span class="ml-auto w-8 h-8 rounded-full bg-nearblack text-white grid place-items-center">◉</span>
+            </div>
+          </div>
+          <div class="p-3 space-y-3">
+            <div class="grid grid-cols-3 gap-2">
+              <div class="bg-zinc-900 text-white rounded-xl p-2.5 text-center"><div class="text-sm font-bold">08</div><div class="text-[10px] opacity-70">Pending</div></div>
+              <div class="bg-[#009490] text-white rounded-xl p-2.5 text-center"><div class="text-sm font-bold">04</div><div class="text-[10px] opacity-80">Active</div></div>
+              <div class="bg-zinc-50 border border-zinc-100 rounded-xl p-2.5 text-center"><div class="text-sm font-bold">18</div><div class="text-[10px] text-zinc-500">Done</div></div>
+            </div>
+            <div class="bg-zinc-50 border border-zinc-100 rounded-2xl p-3">
+              <div class="text-xs font-bold">Today's Jobs</div>
+              <div class="mt-2 space-y-2">
+                <div class="bg-white border border-zinc-100 rounded-xl p-2.5 flex items-center gap-2.5"><span class="w-8 h-8 rounded-lg bg-zinc-900 text-white grid place-items-center text-xs">◉</span><div class="flex-1"><div class="text-xs font-semibold">AC Repair - Andheri</div><div class="text-[11px] text-zinc-500">10:30 AM • OTP Verify</div></div><span class="text-[#009490] text-xs font-bold">Start →</span></div>
+                <div class="bg-white border border-zinc-100 rounded-xl p-2.5 flex items-center gap-2.5"><span class="w-8 h-8 rounded-lg bg-zinc-100 grid place-items-center text-xs">◈</span><div class="flex-1"><div class="text-xs font-semibold">Washing Machine</div><div class="text-[11px] text-zinc-500">02:00 PM • Scheduled</div></div></div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="flex-1 bg-nearblack text-white rounded-full py-2.5 text-xs font-semibold text-center">View Jobs</div>
+              <div class="flex-1 bg-white border border-zinc-200 rounded-full py-2.5 text-xs font-semibold text-center">Check-in</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- floating badges -->
+      <div class="hidden sm:flex absolute -right-2 top-10 bg-white border border-zinc-200 shadow-lg rounded-2xl px-3 py-2 items-center gap-2">
+        <span class="w-8 h-8 rounded-xl bg-[#009490] text-white grid place-items-center">✓</span><div class="text-xs leading-tight"><div class="font-bold">Job Verified</div><div class="text-zinc-500">OTP • 10:32 AM</div></div>
+      </div>
+      <div class="hidden sm:flex absolute -left-6 bottom-20 bg-white border border-zinc-200 shadow-lg rounded-2xl px-3 py-2 items-center gap-2">
+        <span class="w-8 h-8 rounded-xl bg-nearblack text-white grid place-items-center">↗</span><div class="text-xs leading-tight"><div class="font-bold">On the Way</div><div class="text-zinc-500">Tracking live</div></div>
+      </div>
+    </div>
+    <div class="order-1 lg:order-2 reveal">
+      <span class="inline-flex text-xs font-semibold tracking-widest uppercase bg-white border border-zinc-200 px-3 py-1.5 rounded-full">Mobile Application</span>
+      <h2 class="mt-3 font-jakarta font-extrabold text-[30px] lg:text-[44px] leading-none">Your Business,<br><span class="text-[#009490]">In Your Pocket.</span></h2>
+      <p class="mt-4 text-zinc-600 leading-relaxed">Both ServiceGo plans include a dedicated mobile application — for you and your technicians. Manage jobs, track field work and verify service completion from anywhere.</p>
+      <ul class="mt-6 space-y-3">
+        <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-[#009490] text-white grid place-items-center text-xs shrink-0">✓</span><span class="text-sm"><span class="font-semibold text-nearblack">Technician app</span> <span class="text-zinc-600">— assign, track and update jobs on the go</span></span></li>
+        <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-[#009490] text-white grid place-items-center text-xs shrink-0">✓</span><span class="text-sm"><span class="font-semibold text-nearblack">Customer updates</span> <span class="text-zinc-600">— real-time status, OTP and photo verification</span></span></li>
+        <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-[#009490] text-white grid place-items-center text-xs shrink-0">✓</span><span class="text-sm"><span class="font-semibold text-nearblack">Offline-ready</span> <span class="text-zinc-600">— field work doesn't stop without internet</span></span></li>
+      </ul>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <span class="inline-flex items-center gap-2 bg-nearblack text-white text-sm font-semibold px-5 py-3 rounded-full">Included in both plans <span class="bg-white/15 px-2 py-0.5 rounded-full text-xs">Lifetime</span></span>
+        <span class="inline-flex items-center gap-2 bg-white border border-zinc-200 text-sm font-medium px-5 py-3 rounded-full">Android & iOS Ready</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRM WORKFLOW -->
+<section class="py-16 lg:py-24 bg-white">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <h2 class="font-jakarta font-extrabold text-[30px] lg:text-[42px] leading-none">One CRM. Complete<br>Business Control.</h2>
+      <p class="mt-3 text-zinc-600">From customer enquiry to payment collection — every step tracked in your ServiceGo CRM.</p>
+    </div>
+    <div class="mt-10 lg:mt-14 relative reveal">
+      <!-- line desktop -->
+      
+      <div class="grid grid-cols-2 lg:grid-cols-7 gap-4 lg:gap-3">
+        <!-- steps -->
+        <div class="bg-white border border-zinc-200 rounded-2xl p-4 text-center hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-full bg-nearblack text-white grid place-items-center mx-auto font-bold">01</div>
+          <div class="mt-3 text-sm font-bold">Customer</div><div class="text-xs text-zinc-500">New enquiry added</div>
+        </div>
+        <div class="bg-white border border-zinc-200 rounded-2xl p-4 text-center hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-full bg-nearblack text-white grid place-items-center mx-auto font-bold">02</div>
+          <div class="mt-3 text-sm font-bold">Complaint / Order</div><div class="text-xs text-zinc-500">Job created</div>
+        </div>
+        <div class="bg-white border border-zinc-200 rounded-2xl p-4 text-center hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-full bg-[#009490] text-white grid place-items-center mx-auto font-bold">03</div>
+          <div class="mt-3 text-sm font-bold">Technician</div><div class="text-xs text-zinc-500">Assignment</div>
+        </div>
+        <div class="bg-white border border-zinc-200 rounded-2xl p-4 text-center hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-zinc-900 text-zinc-900 grid place-items-center mx-auto font-bold">04</div>
+          <div class="mt-3 text-sm font-bold">Appointment</div><div class="text-xs text-zinc-500">Scheduled</div>
+        </div>
+        <div class="bg-white border border-zinc-200 rounded-2xl p-4 text-center hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-full bg-zinc-900 text-white grid place-items-center mx-auto font-bold">05</div>
+          <div class="mt-3 text-sm font-bold">Job in Progress</div><div class="text-xs text-zinc-500">Live tracking</div>
+        </div>
+        <div class="bg-white border border-zinc-200 rounded-2xl p-4 text-center hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-full bg-zinc-900 text-white grid place-items-center mx-auto font-bold">06</div>
+          <div class="mt-3 text-sm font-bold">Job Completed</div><div class="text-xs text-zinc-500">Photo + OTP</div>
+        </div>
+        <div class="col-span-2 lg:col-span-1 bg-[#009490] text-white rounded-2xl p-4 text-center shadow-lg">
+          <div class="w-12 h-12 rounded-full bg-white text-[#009490] grid place-items-center mx-auto font-extrabold">✓</div>
+          <div class="mt-3 text-sm font-bold">Payment</div><div class="text-xs opacity-80">Collected & tracked</div>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-wrap justify-center gap-2 text-xs font-medium">
+        <span class="bg-zinc-900 text-white px-3 py-1.5 rounded-full">Auto-notifications at each step</span>
+        <span class="bg-teal-50 text-[#009490] border border-[#009490]/15 px-3 py-1.5 rounded-full">Live dashboard updates</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOB VERIFICATION -->
+<section class="py-16 lg:py-20 bg-zinc-50 border-y border-zinc-100">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="max-w-2xl reveal">
+      <h2 class="font-jakarta font-extrabold text-[28px] lg:text-[40px] leading-none">Verify Every Job<br>Before Work Begins</h2>
+      <p class="mt-3 text-zinc-600">Prevent fraud and ensure genuine service visits with built-in verification for every job.</p>
+    </div>
+    <div class="mt-8 grid md:grid-cols-3 gap-5">
+      <div class="reveal bg-white rounded-[20px] border border-zinc-200 p-6 hover:shadow-lg hover:-translate-y-1 transition overflow-hidden">
+        <div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3 class="mt-4 font-bold">Location Verification</h3><p class="mt-1 text-sm text-zinc-600">Technician location is verified at job site before work starts — ensures field presence.</p>
+        <div class="mt-5 bg-zinc-50 border border-zinc-100 rounded-xl p-3 flex items-center gap-3">
+          <span class="w-8 h-8 rounded-lg bg-[#009490] text-white grid place-items-center text-xs">◎</span><div class="text-xs"><div class="font-semibold">Live Location • Matched</div><div class="text-zinc-500">Andheri East • 10:31 AM</div></div><span class="ml-auto text-[#009490] text-xs font-bold">Verified ✓</span>
+        </div>
+      </div>
+      <div class="reveal bg-white rounded-[20px] border border-zinc-200 p-6 hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-[#009490] text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1.5"/></svg></div>
+        <h3 class="mt-4 font-bold">OTP Verification</h3><p class="mt-1 text-sm text-zinc-600">Customer OTP confirms job start and completion — no false claims, no disputes.</p>
+        <div class="mt-5 bg-nearblack text-white rounded-xl p-3 flex items-center justify-between">
+          <div class="text-xs"><div class="opacity-70">Enter OTP</div><div class="font-mono font-bold tracking-[0.3em] text-lg">4 8 2 9</div></div><span class="bg-[#009490] px-4 py-2 rounded-full text-xs font-bold">Verify</span>
+        </div>
+      </div>
+      <div class="reveal bg-white rounded-[20px] border border-zinc-200 p-6 hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+        <h3 class="mt-4 font-bold">Repair Photo</h3><p class="mt-1 text-sm text-zinc-600">Before & after photos uploaded for every job — proof of work for you and customer.</p>
+        <div class="mt-5 grid grid-cols-2 gap-2">
+          <div class="rounded-xl overflow-hidden border border-zinc-100"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&q=80" alt="Repair before" class="h-20 w-full object-cover" loading="lazy"><div class="text-[11px] font-medium px-2 py-1 bg-zinc-50">Before</div></div>
+          <div class="rounded-xl overflow-hidden border border-zinc-100"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=300&q=80" alt="Repair after" class="h-20 w-full object-cover" loading="lazy"><div class="text-[11px] font-medium px-2 py-1 bg-[#009490] text-white">After ✓</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="py-16 lg:py-24 bg-white">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="text-center reveal">
+      <span class="text-xs font-semibold tracking-widest uppercase text-[#009490]">How It Works</span>
+      <h2 class="mt-2 font-jakarta font-extrabold text-[30px] lg:text-[42px]">From Setup to Success in 4 Steps</h2>
+    </div>
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal relative bg-white border border-zinc-200 rounded-[20px] p-6 hover:shadow-md transition">
+        <span class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-nearblack text-white grid place-items-center text-xs font-bold">01</span>
+        <div class="w-12 h-12 rounded-xl bg-zinc-900 text-white grid place-items-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+        <h3 class="mt-4 font-bold">Set Up Your Business</h3><p class="mt-1 text-sm text-zinc-600">We configure your CRM, mobile app and website with your branding and services.</p>
+        <div class="mt-4 text-xs font-medium text-zinc-500">Day 1 • Onboarding</div>
+      </div>
+      <div class="reveal relative bg-white border border-zinc-200 rounded-[20px] p-6 hover:shadow-md transition">
+        <span class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-nearblack text-white grid place-items-center text-xs font-bold">02</span>
+        <div class="w-12 h-12 rounded-xl bg-[#009490] text-white grid place-items-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11v2"/><path d="M22 8a4 4 0 0 1 0 7"/></svg></div>
+        <h3 class="mt-4 font-bold">Manage Customers & Jobs</h3><p class="mt-1 text-sm text-zinc-600">Add customers, create complaints and orders — everything synced instantly.</p>
+        <div class="mt-4 text-xs font-medium text-zinc-500">Daily • CRM</div>
+      </div>
+      <div class="reveal relative bg-white border border-zinc-200 rounded-[20px] p-6 hover:shadow-md transition">
+        <span class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-nearblack text-white grid place-items-center text-xs font-bold">03</span>
+        <div class="w-12 h-12 rounded-xl bg-zinc-900 text-white grid place-items-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3 class="mt-4 font-bold">Assign & Track</h3><p class="mt-1 text-sm text-zinc-600">Assign technicians, set appointments and track live job progress.</p>
+        <div class="mt-4 text-xs font-medium text-zinc-500">Field • Mobile App</div>
+      </div>
+      <div class="reveal relative bg-[#009490] text-white rounded-[20px] p-6 shadow-lg">
+        <span class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-white text-[#009490] grid place-items-center text-xs font-bold">04</span>
+        <div class="w-12 h-12 rounded-xl bg-white text-[#009490] grid place-items-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3 class="mt-4 font-bold">Complete & Manage Payments</h3><p class="mt-1 text-sm opacity-85">Verify with OTP & photos, close jobs and collect payments seamlessly.</p>
+        <div class="mt-4 text-xs font-medium opacity-70">Closed • Paid ✓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IS IT FOR -->
+<section class="py-16 lg:py-20 bg-zinc-50 border-y border-zinc-100">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 reveal">
+      <h2 class="font-jakarta font-extrabold text-[28px] lg:text-[40px] leading-none">Who is ServiceGo For?</h2>
+      <p class="text-zinc-600 max-w-md">Built for every service business that wants to grow professionally and operate smoothly.</p>
+    </div>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="reveal bg-white border border-zinc-200 rounded-[20px] p-6 hover:shadow-md hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center text-sm">❄</div>
+        <h3 class="mt-4 font-bold text-sm leading-tight">AC Service<br>Businesses</h3><p class="mt-2 text-xs text-zinc-600">Installation, repair & AMC for air conditioners.</p>
+      </div>
+      <div class="reveal bg-white border border-zinc-200 rounded-[20px] p-6 hover:shadow-md hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-[#009490] text-white grid place-items-center text-sm">◈</div>
+        <h3 class="mt-4 font-bold text-sm leading-tight">Appliance Repair<br>Businesses</h3><p class="mt-2 text-xs text-zinc-600">Washing machine, fridge, microwave & more.</p>
+      </div>
+      <div class="reveal bg-white border border-zinc-200 rounded-[20px] p-6 hover:shadow-md hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center text-sm">⚙</div>
+        <h3 class="mt-4 font-bold text-sm leading-tight">Repair & Maintenance<br>Businesses</h3><p class="mt-2 text-xs text-zinc-600">Electrical, plumbing and general maintenance.</p>
+      </div>
+      <div class="reveal bg-white border border-zinc-200 rounded-[20px] p-6 hover:shadow-md hover:-translate-y-1 transition">
+        <div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center text-sm">⌖</div>
+        <h3 class="mt-4 font-bold text-sm leading-tight">Local Service<br>Companies</h3><p class="mt-2 text-xs text-zinc-600">City-based service providers scaling operations.</p>
+      </div>
+      <div class="reveal bg-[#009490] text-white rounded-[20px] p-6 shadow-lg sm:col-span-2 lg:col-span-1">
+        <div class="w-10 h-10 rounded-xl bg-white text-[#009490] grid place-items-center text-sm">◉</div>
+        <h3 class="mt-4 font-bold text-sm leading-tight">Multi-Technician<br>Businesses</h3><p class="mt-2 text-xs opacity-80">Teams of 5 to 50+ technicians in the field.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-16 lg:py-24 bg-white">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="text-xs font-semibold tracking-widest uppercase text-[#009490]">Pricing • Lifetime Plan</span>
+      <h2 class="mt-2 font-jakarta font-extrabold text-[30px] lg:text-[44px] leading-none">Simple, Transparent Pricing</h2>
+      <p class="mt-3 text-zinc-600">One-time setup cost. Lifetime access. No monthly rent. Renewal only ₹5,000.</p>
+    </div>
+    <div class="mt-10 grid lg:grid-cols-2 gap-6 max-w-[880px] mx-auto">
+      <!-- Starter -->
+      <div class="reveal bg-white border border-zinc-200 rounded-[28px] p-7 lg:p-8 flex flex-col">
+        <div class="flex items-start justify-between">
+          <div><h3 class="font-jakarta font-extrabold text-xl">ServiceGo Starter</h3><p class="text-sm text-zinc-500">Perfect to get started</p></div>
+          <span class="text-xs font-semibold bg-zinc-900 text-white px-3 py-1.5 rounded-full">POPULAR</span>
+        </div>
+        <div class="mt-6 flex items-baseline gap-1"><span class="text-4xl font-extrabold tracking-tight">₹25,000</span><span class="text-zinc-500 text-sm">/ lifetime</span></div>
+        <div class="mt-1 text-xs font-medium text-[#009490] bg-teal-50 border border-[#009490]/15 inline-flex w-fit px-3 py-1 rounded-full">One-Time Setup Cost</div>
+        <div class="mt-6 space-y-3 text-sm">
+          <div class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span><span><span class="font-semibold">CRM</span> <span class="text-zinc-600">— complete business control</span></span></div>
+          <div class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span><span><span class="font-semibold">Mobile Application</span> <span class="text-zinc-600">— technician & admin</span></span></div>
+          <div class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-zinc-200 text-zinc-500 grid place-items-center text-[10px] shrink-0">✕</span><span class="text-zinc-400">Website — not included</span></div>
+          <div class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-zinc-900 text-white grid place-items-center text-[10px] shrink-0">✓</span><span class="font-medium">Lifetime Plan</span></div>
+        </div>
+        <div class="mt-6 bg-zinc-50 border border-zinc-100 rounded-xl px-4 py-3 flex items-center justify-between text-sm"><span class="text-zinc-600">Renewal Fee</span><span class="font-bold">₹5,000</span></div>
+        <a href="https://wa.me/919149671713?text=Hi%2C%20I%20want%20ServiceGo%20Starter%20Plan%20at%20%E2%82%B925%2C000" target="_blank" class="mt-6 w-full text-center bg-white border-2 border-zinc-900 text-zinc-900 font-bold py-3.5 rounded-full hover:bg-zinc-900 hover:text-white transition">Choose Starter</a>
+        <p class="mt-3 text-center text-xs text-zinc-500">Setup in 3–5 days • Training included</p>
+      </div>
+      <!-- Business -->
+      <div class="reveal relative bg-nearblack text-white rounded-[28px] p-7 lg:p-8 flex flex-col shadow-[0_20px_60px_rgba(0,0,0,0.2)] border border-zinc-800">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#009490] text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow">✦ Most Complete</span>
+        <div class="flex items-start justify-between mt-2">
+          <div><h3 class="font-jakarta font-extrabold text-xl">ServiceGo Business</h3><p class="text-sm text-zinc-400">For growing businesses</p></div>
+          <span class="w-8 h-8 rounded-full bg-[#009490] grid place-items-center">↗</span>
+        </div>
+        <div class="mt-6 flex items-baseline gap-1"><span class="text-4xl font-extrabold tracking-tight">₹30,000</span><span class="text-zinc-400 text-sm">/ lifetime</span></div>
+        <div class="mt-1 text-xs font-medium text-[#009490] bg-white/10 border border-white/10 inline-flex w-fit px-3 py-1 rounded-full">One-Time Setup + Website</div>
+        <div class="mt-6 space-y-3 text-sm">
+          <div class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span><span><span class="font-semibold">CRM</span> <span class="text-zinc-300">— complete business control</span></span></div>
+          <div class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span><span><span class="font-semibold">Mobile Application</span> <span class="text-zinc-300">— technician & admin</span></span></div>
+          <div class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-white text-nearblack grid place-items-center text-[10px] shrink-0">✓</span><span><span class="font-semibold">Professional Website</span> <span class="text-zinc-300">— your business online</span></span></div>
+          <div class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-white text-nearblack grid place-items-center text-[10px] shrink-0">✓</span><span class="font-medium">Lifetime Plan</span></div>
+        </div>
+        <div class="mt-6 bg-white/10 border border-white/10 rounded-xl px-4 py-3 flex items-center justify-between text-sm"><span class="text-zinc-300">Renewal Fee</span><span class="font-bold">₹5,000</span></div>
+        <a href="https://wa.me/919149671713?text=Hi%2C%20I%20want%20ServiceGo%20Business%20Plan%20at%20%E2%82%B930%2C000%20with%20Website" target="_blank" class="mt-6 w-full text-center bg-[#009490] text-white font-bold py-3.5 rounded-full hover:bg-[#007a77] transition shadow-[0_8px_24px_rgba(0,148,144,0.3)]">Choose Business →</a>
+        <p class="mt-3 text-center text-xs text-zinc-400">Everything in Starter + Website • Most value</p>
+      </div>
+    </div>
+    <p class="mt-6 text-center text-xs text-zinc-500">Both plans are lifetime. Renewal covers hosting, support & updates. No hidden charges.</p>
+  </div>
+</section>
+
+<!-- TECHNICIAN MONTHLY PLANS -->
+<section id="tech-monthly" class="py-16 lg:py-24 bg-zinc-50 border-y border-zinc-100">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="text-center max-w-3xl mx-auto reveal">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase bg-white border border-zinc-200 text-zinc-700 px-3.5 py-1.5 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#009490] animate-pulse"></span>
+        Flexible Monthly Pricing — Pay Per Technician
+      </span>
+      <h2 class="mt-4 font-jakarta font-extrabold text-[30px] lg:text-[44px] leading-none">Technician Monthly Plans</h2>
+      <p class="mt-3 text-zinc-600">Scale your team with simple per-technician pricing. No fixed slab pressure — pay only for active technicians.</p>
+    </div>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- PLAN 1 -->
+      <div class="reveal bg-white rounded-[24px] border border-zinc-200 p-6 flex flex-col hover:shadow-lg hover:-translate-y-1 transition">
+        <span class="inline-flex w-fit text-[11px] font-bold tracking-widest uppercase bg-zinc-900 text-white px-3 py-1 rounded-full">BASE PLAN</span>
+        <div class="mt-4 text-sm font-semibold text-zinc-500">1 – 5 Technicians</div>
+        <div class="mt-3 flex items-baseline gap-1">
+          <span class="text-3xl font-extrabold tracking-tight">₹449</span>
+          <span class="text-sm text-zinc-500 font-medium">/ technician / month</span>
+        </div>
+        <div class="mt-3 bg-zinc-50 border border-zinc-100 rounded-xl px-3 py-2.5">
+          <div class="text-[11px] font-semibold tracking-wide uppercase text-zinc-500">Monthly Package</div>
+          <div class="text-sm font-bold">₹449 – ₹2,245</div>
+        </div>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-600">
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span> CRM + Mobile App included</li>
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span> Perfect for small teams</li>
+        </ul>
+        <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20want%20Monthly%20Plan%201-5%20Tech%20at%20%E2%82%B9449%2Ftech" target="_blank" class="mt-6 w-full text-center bg-white border-2 border-zinc-900 text-zinc-900 font-bold py-3 rounded-full hover:bg-zinc-900 hover:text-white transition">Choose Plan</a>
+      </div>
+
+      <!-- PLAN 2 -->
+      <div class="reveal relative bg-white rounded-[24px] border-2 border-[#009490]/30 p-6 flex flex-col shadow-[0_12px_40px_rgba(0,148,144,0.08)] hover:shadow-lg hover:-translate-y-1 transition">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#009490] text-white text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">BEST VALUE</span>
+        <span class="inline-flex w-fit text-[11px] font-bold tracking-widest uppercase bg-teal-50 text-[#009490] border border-[#009490]/15 px-3 py-1 rounded-full mt-2">PLAN 2</span>
+        <div class="mt-3 text-sm font-semibold text-zinc-500">6 – 10 Technicians</div>
+        <div class="mt-3 flex items-baseline gap-1">
+          <span class="text-3xl font-extrabold tracking-tight">₹399</span>
+          <span class="text-sm text-zinc-500 font-medium">/ technician / month</span>
+        </div>
+        <div class="mt-3 bg-[#009490] text-white rounded-xl px-3 py-2.5">
+          <div class="text-[11px] font-semibold tracking-wide uppercase opacity-80">Monthly Bill</div>
+          <div class="text-sm font-bold">₹2,394 – ₹3,990</div>
+        </div>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-600">
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span> Save ₹50 per technician</li>
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span> Most chosen for growth</li>
+        </ul>
+        <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20want%20Monthly%20Plan%206-10%20Tech%20at%20%E2%82%B9399%2Ftech" target="_blank" class="mt-6 w-full text-center bg-[#009490] text-white font-bold py-3 rounded-full hover:bg-[#007a77] transition">Choose Plan →</a>
+      </div>
+
+      <!-- PLAN 3 -->
+      <div class="reveal bg-nearblack text-white rounded-[24px] border border-zinc-800 p-6 flex flex-col shadow-[0_16px_50px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition">
+        <span class="inline-flex w-fit text-[11px] font-bold tracking-widest uppercase bg-white text-nearblack px-3 py-1 rounded-full">SAVE MORE</span>
+        <div class="mt-4 text-sm font-semibold text-zinc-400">11 – 30 Technicians</div>
+        <div class="mt-3 flex items-baseline gap-1">
+          <span class="text-3xl font-extrabold tracking-tight">₹369</span>
+          <span class="text-sm text-zinc-400 font-medium">/ technician / month</span>
+        </div>
+        <div class="mt-3 bg-white/10 border border-white/10 rounded-xl px-3 py-2.5">
+          <div class="text-[11px] font-semibold tracking-wide uppercase text-zinc-400">Monthly Bill</div>
+          <div class="text-sm font-bold">₹4,059 – ₹11,070</div>
+        </div>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-300">
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span> Lowest per-tech so far</li>
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-white text-nearblack grid place-items-center text-[10px] shrink-0">✓</span> Ideal for mid-size teams</li>
+        </ul>
+        <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20want%20Monthly%20Plan%2011-30%20Tech%20at%20%E2%82%B9369%2Ftech" target="_blank" class="mt-6 w-full text-center bg-white text-nearblack font-bold py-3 rounded-full hover:bg-zinc-100 transition">Choose Plan</a>
+      </div>
+
+      <!-- PLAN 4 -->
+      <div class="reveal bg-white rounded-[24px] border border-zinc-200 p-6 flex flex-col hover:shadow-lg hover:-translate-y-1 transition">
+        <span class="inline-flex w-fit text-[11px] font-bold tracking-widest uppercase bg-zinc-900 text-white px-3 py-1 rounded-full">BEST RATE</span>
+        <div class="mt-4 text-sm font-semibold text-zinc-500">31 – 100 Technicians</div>
+        <div class="mt-3 flex items-baseline gap-1">
+          <span class="text-3xl font-extrabold tracking-tight">₹359</span>
+          <span class="text-sm text-zinc-500 font-medium">/ technician / month</span>
+        </div>
+        <div class="mt-3 bg-zinc-900 text-white rounded-xl px-3 py-2.5">
+          <div class="text-[11px] font-semibold tracking-wide uppercase opacity-60">Monthly Bill</div>
+          <div class="text-sm font-bold">₹11,129 – ₹35,900</div>
+        </div>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-600">
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-nearblack text-white grid place-items-center text-[10px] shrink-0">✓</span> Best per-technician rate</li>
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-nearblack text-white grid place-items-center text-[10px] shrink-0">✓</span> Built for large operations</li>
+        </ul>
+        <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20want%20Monthly%20Plan%2031-100%20Tech%20at%20%E2%82%B9359%2Ftech" target="_blank" class="mt-6 w-full text-center bg-white border-2 border-zinc-900 text-zinc-900 font-bold py-3 rounded-full hover:bg-zinc-900 hover:text-white transition">Choose Plan</a>
+      </div>
+    </div>
+
+    <div class="mt-8 flex justify-center">
+      <span class="inline-flex items-center gap-2 bg-white border border-zinc-200 rounded-full px-5 py-2.5 text-sm font-semibold">
+        <span class="w-2 h-2 rounded-full bg-[#009490]"></span>
+        More Technicians = Lower Per-Technician Monthly Cost
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICIAN YEARLY PLANS -->
+<section id="tech-yearly" class="py-16 lg:py-24 bg-white">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="text-center max-w-3xl mx-auto reveal">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase bg-teal-50 border border-[#009490]/15 text-[#009490] px-3.5 py-1.5 rounded-full">Yearly Billing • Save More</span>
+      <h2 class="mt-4 font-jakarta font-extrabold text-[30px] lg:text-[44px] leading-none">Technician Yearly Plans</h2>
+      <p class="mt-3 text-zinc-600">Save more with our annual plans — yearly billing designed for growing teams with flexible pricing.</p>
+    </div>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- STARTER -->
+      <div class="reveal bg-white rounded-[24px] border border-zinc-200 p-6 flex flex-col hover:shadow-lg hover:-translate-y-1 transition">
+        <span class="inline-flex w-fit text-[11px] font-bold tracking-widest uppercase bg-zinc-100 text-zinc-700 px-3 py-1 rounded-full border border-zinc-200">STARTER</span>
+        <div class="mt-3 text-sm font-semibold text-zinc-500">1 – 10 Technicians</div>
+        <div class="mt-4">
+          <div class="flex items-baseline gap-1"><span class="text-3xl font-extrabold">₹4,999</span><span class="text-xs font-semibold text-zinc-500">+ 18% GST</span></div>
+          <div class="text-xs font-semibold tracking-widest uppercase text-zinc-400 mt-1">Per Year</div>
+        </div>
+        <div class="mt-4 bg-zinc-50 border border-zinc-100 rounded-xl px-3 py-2 text-xs font-medium text-zinc-600">Billed annually • Best for startups</div>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-600">
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-zinc-900 text-white grid place-items-center text-[10px] shrink-0">✓</span> All core features</li>
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-zinc-900 text-white grid place-items-center text-[10px] shrink-0">✓</span> Up to 10 technicians</li>
+        </ul>
+        <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20want%20Yearly%20Starter%20Plan%201-10%20Tech%20%E2%82%B94999%2Fyear" target="_blank" class="mt-6 w-full text-center bg-white border-2 border-zinc-900 text-zinc-900 font-bold py-3 rounded-full hover:bg-zinc-900 hover:text-white transition">Choose Starter</a>
+      </div>
+
+      <!-- MOST POPULAR -->
+      <div class="reveal relative bg-nearblack text-white rounded-[24px] border border-zinc-800 p-6 flex flex-col shadow-[0_20px_60px_rgba(0,0,0,0.18)] hover:-translate-y-1 transition">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#009490] text-white text-[11px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow">✦ MOST POPULAR</span>
+        <span class="inline-flex w-fit text-[11px] font-bold tracking-widest uppercase bg-white/10 text-white border border-white/15 px-3 py-1 rounded-full mt-3">11 – 50 TECHNICIANS</span>
+        <div class="mt-4">
+          <div class="flex items-baseline gap-1"><span class="text-3xl font-extrabold">₹7,999</span><span class="text-xs font-semibold text-zinc-400">+ 18% GST</span></div>
+          <div class="text-xs font-semibold tracking-widest uppercase text-zinc-400 mt-1">Per Year</div>
+        </div>
+        <div class="mt-4 bg-[#009490] rounded-xl px-3 py-2 text-xs font-bold text-white">Save vs monthly • Popular for scaling teams</div>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-300">
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span> Everything in Starter</li>
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span> Up to 50 technicians</li>
+        </ul>
+        <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20want%20Yearly%20Popular%20Plan%2011-50%20Tech%20%E2%82%B97999%2Fyear" target="_blank" class="mt-6 w-full text-center bg-[#009490] text-white font-bold py-3 rounded-full hover:bg-[#007a77] transition shadow-[0_8px_24px_rgba(0,148,144,0.3)]">Choose Popular →</a>
+      </div>
+
+      <!-- BEST VALUE -->
+      <div class="reveal relative bg-white rounded-[24px] border-2 border-[#009490]/20 p-6 flex flex-col shadow-[0_12px_40px_rgba(0,148,144,0.08)] hover:shadow-lg hover:-translate-y-1 transition">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-[11px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">BEST VALUE</span>
+        <span class="inline-flex w-fit text-[11px] font-bold tracking-widest uppercase bg-teal-50 text-[#009490] border border-[#009490]/15 px-3 py-1 rounded-full mt-3">51 – 100 TECHNICIANS</span>
+        <div class="mt-4">
+          <div class="flex items-baseline gap-1"><span class="text-3xl font-extrabold">₹9,999</span><span class="text-xs font-semibold text-zinc-500">+ 18% GST</span></div>
+          <div class="text-xs font-semibold tracking-widest uppercase text-zinc-400 mt-1">Per Year</div>
+        </div>
+        <div class="mt-4 bg-zinc-900 text-white rounded-xl px-3 py-2 text-xs font-bold">Maximum savings • For large teams</div>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-600">
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span> Lowest yearly per-team cost</li>
+          <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-[#009490] text-white grid place-items-center text-[10px] shrink-0">✓</span> Up to 100 technicians</li>
+        </ul>
+        <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20want%20Yearly%20Best%20Value%20Plan%2051-100%20Tech%20%E2%82%B99999%2Fyear" target="_blank" class="mt-6 w-full text-center bg-zinc-900 text-white font-bold py-3 rounded-full hover:bg-black transition">Choose Best Value</a>
+      </div>
+
+      <!-- CUSTOM -->
+      <div class="reveal bg-zinc-50 rounded-[24px] border border-zinc-200 p-6 flex flex-col hover:shadow-lg hover:-translate-y-1 transition">
+        <span class="inline-flex w-fit text-[11px] font-bold tracking-widest uppercase bg-white border border-zinc-200 text-zinc-700 px-3 py-1 rounded-full">CONTACT US</span>
+        <div class="mt-3 text-sm font-semibold text-zinc-500">Custom Plan</div>
+        <div class="mt-4">
+          <div class="text-2xl font-extrabold leading-none">Custom Pricing</div>
+          <div class="text-xs font-semibold tracking-widest uppercase text-zinc-400 mt-1.5">Per Year</div>
+        </div>
+        <div class="mt-4 bg-white border border-zinc-200 rounded-xl px-3 py-2 text-xs font-semibold text-zinc-700">Designed for Your Business</div>
+        <p class="mt-5 text-sm text-zinc-600 leading-relaxed">100+ technicians, multi-branch or enterprise needs? We’ll tailor a plan for you.</p>
+        <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20need%20a%20Custom%20Yearly%20Plan%20for%20my%20team" target="_blank" class="mt-6 w-full text-center bg-white border-2 border-zinc-900 text-zinc-900 font-bold py-3 rounded-full hover:bg-zinc-900 hover:text-white transition">Contact Us</a>
+        <div class="mt-3 flex items-center justify-center gap-2 text-xs text-zinc-500"><span class="w-1.5 h-1.5 rounded-full bg-[#009490]"></span> Talk to us on WhatsApp</div>
+      </div>
+    </div>
+
+    <div class="mt-8 flex justify-center">
+      <span class="inline-flex items-center gap-2 bg-zinc-900 text-white rounded-full px-5 py-2.5 text-sm font-semibold">
+        Annual Plans • Flexible Pricing • Built for Growing Teams
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="py-16 lg:py-20 bg-zinc-50 border-y border-zinc-100">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 reveal">
+      <h2 class="font-jakarta font-extrabold text-[28px] lg:text-[40px] leading-none">Why ServiceGo?</h2>
+      <p class="text-zinc-600 max-w-md">A platform built for real service operations — not just another software.</p>
+    </div>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="reveal bg-white border border-zinc-200 rounded-[20px] p-6"><div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><h3 class="mt-4 font-bold">One Platform</h3><p class="mt-1 text-sm text-zinc-600">CRM, app and website connected — no juggling multiple tools.</p></div>
+      <div class="reveal bg-white border border-zinc-200 rounded-[20px] p-6"><div class="w-10 h-10 rounded-xl bg-[#009490] text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div><h3 class="mt-4 font-bold">Easy to Use</h3><p class="mt-1 text-sm text-zinc-600">Simple interface your team can learn in one day — training included.</p></div>
+      <div class="reveal bg-white border border-zinc-200 rounded-[20px] p-6"><div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div><h3 class="mt-4 font-bold">Mobile Ready</h3><p class="mt-1 text-sm text-zinc-600">Run your business from your pocket — technicians and owners.</p></div>
+      <div class="reveal bg-white border border-zinc-200 rounded-[20px] p-6"><div class="w-10 h-10 rounded-xl bg-nearblack text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v20"/><path d="M2 12h20"/><circle cx="12" cy="12" r="10"/></svg></div><h3 class="mt-4 font-bold">Scalable</h3><p class="mt-1 text-sm text-zinc-600">From 5 to 50 technicians — grows as your business grows.</p></div>
+      <div class="reveal bg-white border border-zinc-200 rounded-[20px] p-6"><div class="w-10 h-10 rounded-xl bg-[#009490] text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3 class="mt-4 font-bold">Professional</h3><p class="mt-1 text-sm text-zinc-600">Give customers a branded app and website — build trust and loyalty.</p></div>
+      <div class="reveal bg-nearblack text-white rounded-[20px] p-6"><div class="w-10 h-10 rounded-xl bg-[#009490] text-white grid place-items-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3 class="mt-4 font-bold">Lifetime Plan</h3><p class="mt-1 text-sm text-zinc-400">Pay once, use lifetime. No monthly subscriptions — only ₹5k renewal.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="py-16 lg:py-24 bg-white">
+  <div class="max-w-[880px] mx-auto px-5 lg:px-6">
+    <div class="text-center reveal">
+      <h2 class="font-jakarta font-extrabold text-[28px] lg:text-[40px]">Compare Plans</h2>
+      <p class="mt-2 text-zinc-600">Choose the plan that fits your business today — upgrade anytime.</p>
+    </div>
+    <div class="mt-8 reveal overflow-hidden rounded-[20px] border border-zinc-200">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm min-w-[520px]">
+          <thead>
+            <tr class="bg-zinc-50 border-b border-zinc-200">
+              <th class="text-left font-semibold px-6 py-4 text-zinc-600 w-[44%]">Features</th>
+              <th class="text-center font-extrabold px-6 py-4">Starter<br><span class="font-medium text-zinc-500 text-xs">₹25,000</span></th>
+              <th class="text-center font-extrabold px-6 py-4 bg-[#009490] text-white">Business<br><span class="font-medium opacity-80 text-xs">₹30,000 • Recommended</span></th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-zinc-100">
+            <tr><td class="px-6 py-3.5 font-medium">CRM</td><td class="text-center"><span class="w-6 h-6 rounded-full bg-[#009490] text-white grid place-items-center mx-auto text-xs">✓</span></td><td class="text-center bg-teal-50/50"><span class="w-6 h-6 rounded-full bg-[#009490] text-white grid place-items-center mx-auto text-xs">✓</span></td></tr>
+            <tr><td class="px-6 py-3.5 font-medium">Mobile Application</td><td class="text-center"><span class="w-6 h-6 rounded-full bg-[#009490] text-white grid place-items-center mx-auto text-xs">✓</span></td><td class="text-center bg-teal-50/50"><span class="w-6 h-6 rounded-full bg-[#009490] text-white grid place-items-center mx-auto text-xs">✓</span></td></tr>
+            <tr><td class="px-6 py-3.5 font-medium">Website</td><td class="text-center text-zinc-400">—</td><td class="text-center bg-teal-50/50"><span class="w-6 h-6 rounded-full bg-nearblack text-white grid place-items-center mx-auto text-xs">✓</span></td></tr>
+            <tr><td class="px-6 py-3.5 font-medium">Lifetime Plan</td><td class="text-center"><span class="w-6 h-6 rounded-full bg-[#009490] text-white grid place-items-center mx-auto text-xs">✓</span></td><td class="text-center bg-teal-50/50"><span class="w-6 h-6 rounded-full bg-[#009490] text-white grid place-items-center mx-auto text-xs">✓</span></td></tr>
+            <tr><td class="px-6 py-3.5 font-medium">One-Time Setup</td><td class="text-center font-semibold">₹25,000</td><td class="text-center bg-teal-50/50 font-extrabold text-[#009490]">₹30,000</td></tr>
+            <tr><td class="px-6 py-3.5 font-medium">Renewal</td><td class="text-center font-medium">₹5,000</td><td class="text-center bg-teal-50/50 font-medium">₹5,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-16 lg:py-24 bg-zinc-50 border-y border-zinc-100">
+  <div class="max-w-[760px] mx-auto px-5 lg:px-6">
+    <div class="text-center reveal">
+      <h2 class="font-jakarta font-extrabold text-[28px] lg:text-[40px]">Frequently Asked Questions</h2>
+      <p class="mt-2 text-zinc-600">Everything you need to know about ServiceGo.</p>
+    </div>
+    <div class="mt-8 space-y-3" id="faqList">
+      <!-- FAQ items -->
+      <div class="faq-item bg-white border border-zinc-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between text-left px-6 py-4 font-semibold">What is ServiceGo?<span class="w-8 h-8 rounded-full bg-zinc-900 text-white grid place-items-center text-xs shrink-0">+</span></button>
+        <div class="faq-panel hidden px-6 pb-4 text-sm leading-relaxed text-zinc-600">ServiceGo is a complete business management solution for service-based businesses — including CRM, mobile application and website to manage customers, complaints, technicians, appointments, AMC, parts, payments and daily operations from one platform.</div>
+      </div>
+      
+      <div class="faq-item bg-white border border-zinc-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between text-left px-6 py-4 font-semibold">What is the renewal fee?<span class="w-8 h-8 rounded-full bg-zinc-900 text-white grid place-items-center text-xs shrink-0">+</span></button>
+        <div class="faq-panel hidden px-6 pb-4 text-sm leading-relaxed text-zinc-600">Renewal is ₹5,000 for both lifetime plans. It covers hosting, maintenance, updates and support. There are no monthly fees for lifetime plans.</div>
+      </div>
+      <div class="faq-item bg-white border border-zinc-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between text-left px-6 py-4 font-semibold">What are the Technician Monthly Plans?<span class="w-8 h-8 rounded-full bg-zinc-900 text-white grid place-items-center text-xs shrink-0">+</span></button>
+        <div class="faq-panel hidden px-6 pb-4 text-sm leading-relaxed text-zinc-600">Monthly plans are flexible per-technician billing: 1–5 techs at ₹449/tech, 6–10 at ₹399/tech, 11–30 at ₹369/tech and 31–100 at ₹359/tech. Monthly bill ranges from ₹449 to ₹35,900. More technicians = lower per-technician cost.</div>
+      </div>
+      <div class="faq-item bg-white border border-zinc-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between text-left px-6 py-4 font-semibold">What are the Technician Yearly Plans?<span class="w-8 h-8 rounded-full bg-zinc-900 text-white grid place-items-center text-xs shrink-0">+</span></button>
+        <div class="faq-panel hidden px-6 pb-4 text-sm leading-relaxed text-zinc-600">Yearly plans save more with annual billing: Starter 1–10 techs at ₹4,999+GST/year, Popular 11–50 techs at ₹7,999+GST/year, Best Value 51–100 techs at ₹9,999+GST/year, and Custom pricing for 100+ or enterprise needs.</div>
+      </div>
+      <div class="faq-item bg-white border border-zinc-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between text-left px-6 py-4 font-semibold">Can it be customized?<span class="w-8 h-8 rounded-full bg-zinc-900 text-white grid place-items-center text-xs shrink-0">+</span></button>
+        <div class="faq-panel hidden px-6 pb-4 text-sm leading-relaxed text-zinc-600">Yes. ServiceGo can be customized to your service type, branding and workflow. Talk to our team on WhatsApp for custom requirements — including Custom Yearly plans.</div>
+      </div>
+      <div class="faq-item bg-white border border-zinc-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between text-left px-6 py-4 font-semibold">Do I get a mobile application?<span class="w-8 h-8 rounded-full bg-zinc-900 text-white grid place-items-center text-xs shrink-0">+</span></button>
+        <div class="faq-panel hidden px-6 pb-4 text-sm leading-relaxed text-zinc-600">Yes — both lifetime plans and all technician monthly/yearly plans include a dedicated mobile application for managing jobs, technicians and customers on the go. Android & iOS ready.</div>
+      </div>
+      <div class="faq-item bg-white border border-zinc-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full flex items-center justify-between text-left px-6 py-4 font-semibold">Do I need the website plan?<span class="w-8 h-8 rounded-full bg-zinc-900 text-white grid place-items-center text-xs shrink-0">+</span></button>
+        <div class="faq-panel hidden px-6 pb-4 text-sm leading-relaxed text-zinc-600">If you want your business to be discoverable online, take online enquiries and look professional — choose ServiceGo Business (₹30,000). If you only need CRM + App, Starter is enough. Technician monthly/yearly plans also include CRM + App. You can upgrade anytime.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contact" class="bg-nearblack text-white py-16 lg:py-24">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6">
+    <div class="bg-[#0a0a0a] border border-zinc-800 rounded-[32px] p-8 lg:p-12 overflow-hidden relative">
+      <div class="absolute -top-20 -right-20 w-96 h-96 bg-[#009490]/20 rounded-full blur-3xl"></div>
+      <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="font-jakarta font-extrabold text-[30px] lg:text-[44px] leading-none">Take Your Service<br><span class="text-[#009490]">Business to the<br>Next Level.</span></h2>
+          <p class="mt-4 text-zinc-400 leading-relaxed">Manage your customers, team, service jobs and business operations with ServiceGo — the complete platform built for real growth.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#pricing" class="inline-flex items-center gap-2 bg-[#009490] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#007a77] transition">Get ServiceGo <span>→</span></a>
+            <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20want%20to%20get%20ServiceGo" target="_blank" class="inline-flex items-center gap-2 bg-white text-nearblack font-bold px-7 py-3.5 rounded-full hover:bg-zinc-100 transition">WhatsApp Us</a>
+          </div>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 text-sm">
+            <a href="tel:+919149671713" class="flex items-center gap-2.5 bg-white/10 border border-white/15 rounded-full px-4 py-2.5 hover:bg-white/15 transition"><span class="w-7 h-7 rounded-full bg-[#009490] grid place-items-center text-xs">☎</span> 9149671713</a>
+            <a href="mailto:info@kodexive.com" class="flex items-center gap-2.5 bg-white/10 border border-white/15 rounded-full px-4 py-2.5 hover:bg-white/15 transition"><span class="w-7 h-7 rounded-full bg-white text-nearblack grid place-items-center text-xs">✉</span> info@kodexive.com</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-[20px] p-5 text-nearblack shadow-xl">
+          <div class="flex items-center justify-between"><span class="font-bold">Quick Enquiry</span><span class="text-xs bg-teal-50 text-[#009490] border border-[#009490]/15 px-2.5 py-1 rounded-full">Response in 2 hrs</span></div>
+          <form class="mt-5 space-y-3" onsubmit="event.preventDefault(); window.open('https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20am%20'+encodeURIComponent(this.name.value)+'%20and%20want%20ServiceGo.%20Phone:%20'+encodeURIComponent(this.phone.value),'_blank')">
+            <input name="name" required placeholder="Your name" class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490]">
+            <input name="phone" required placeholder="Phone number" class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490]">
+            <select class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm bg-white">
+              <option>ServiceGo Starter — ₹25,000 (Lifetime)</option>
+              <option>ServiceGo Business — ₹30,000 (Lifetime)</option>
+              <option>Monthly — 1-5 Tech @ ₹449/tech</option>
+              <option>Monthly — 6-10 Tech @ ₹399/tech</option>
+              <option>Monthly — 11-30 Tech @ ₹369/tech</option>
+              <option>Monthly — 31-100 Tech @ ₹359/tech</option>
+              <option>Yearly — Starter 1-10 Tech @ ₹4,999+GST</option>
+              <option>Yearly — Popular 11-50 Tech @ ₹7,999+GST</option>
+              <option>Yearly — Best Value 51-100 Tech @ ₹9,999+GST</option>
+              <option>Yearly — Custom Plan</option>
+            </select>
+            <button type="submit" class="w-full bg-[#009490] text-white font-bold py-3.5 rounded-full hover:bg-[#007a77] transition">Send on WhatsApp →</button>
+            <p class="text-center text-xs text-zinc-500">By submitting, you agree to be contacted by Kodexive Technologies.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-nearblack text-zinc-400 border-t border-zinc-800">
+  <div class="max-w-[1220px] mx-auto px-5 lg:px-6 py-10">
+    <div class="grid md:grid-cols-[1.5fr_1fr_1fr] gap-10">
+      <div>
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-[#009490] grid place-items-center text-white font-extrabold">S</span>
+          <span><span class="font-jakarta font-extrabold text-white">ServiceGo</span> <span class="text-xs">by Kodexive Technologies</span></span>
+        </div>
+        <p class="mt-3 text-sm leading-relaxed max-w-sm">Complete business management solution for service businesses — CRM, mobile app and website in one lifetime plan.</p>
+        <div class="mt-4 flex gap-2">
+          <a href="https://wa.me/919149671713" target="_blank" class="w-9 h-9 rounded-full bg-white/10 grid place-items-center hover:bg-[#009490] hover:text-white transition">W</a>
+          <a href="mailto:info@kodexive.com" class="w-9 h-9 rounded-full bg-white/10 grid place-items-center hover:bg-white hover:text-nearblack transition">✉</a>
+          <a href="tel:+919149671713" class="w-9 h-9 rounded-full bg-white/10 grid place-items-center hover:bg-white hover:text-nearblack transition">☎</a>
+        </div>
+      </div>
+      <div>
+        <div class="font-semibold text-white text-sm">Navigation</div>
+        <nav class="mt-3 grid gap-2 text-sm">
+          <a href="#home" class="hover:text-white">Home</a>
+          <a href="#features" class="hover:text-white">Features</a>
+          <a href="#how-it-works" class="hover:text-white">How It Works</a>
+          <a href="#pricing" class="hover:text-white">Pricing</a>
+          <a href="#faq" class="hover:text-white">FAQ</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <div class="font-semibold text-white text-sm">Contact</div>
+        <div class="mt-3 space-y-2 text-sm">
+          <a href="tel:+919149671713" class="block hover:text-white">Phone: 9149671713</a>
+          <a href="mailto:info@kodexive.com" class="block hover:text-white">Email: info@kodexive.com</a>
+          <p class="text-xs leading-relaxed">Kodexive Technologies<br>Lifetime Plan • One-Time Setup<br>Renewal ₹5,000</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t border-zinc-800 flex flex-col sm:flex-row justify-between gap-3 text-xs">
+      <span>© 2026 ServiceGo. All rights reserved.</span>
+      <span>Developed by <a href="mailto:info@kodexive.com" class="text-white hover:underline">Kodexive Technologies</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile menu
+  const btn=document.getElementById('menuBtn');
+  const menu=document.getElementById('mobileMenu');
+  btn?.addEventListener('click',()=>menu.classList.toggle('hidden'));
+  menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.add('hidden')));
+
+  // navbar shadow on scroll
+  const nav=document.getElementById('navbar');
+  addEventListener('scroll',()=>{ if(scrollY>10) nav.classList.add('shadow-sm'); else nav.classList.remove('shadow-sm')},{passive:true});
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const item=b.closest('.faq-item');
+      const panel=item.querySelector('.faq-panel');
+      const icon=b.querySelector('span');
+      const isOpen=!panel.classList.contains('hidden');
+      document.querySelectorAll('.faq-panel').forEach(p=>p.classList.add('hidden'));
+      document.querySelectorAll('.faq-btn span').forEach(s=>s.textContent='+');
+      if(!isOpen){ panel.classList.remove('hidden'); icon.textContent='—'; }
+    });
+  });
+  // open first
+  document.querySelector('.faq-btn')?.click();
+
+  // reveal on scroll
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in') })
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
