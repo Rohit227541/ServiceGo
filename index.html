@@ -44,6 +44,20 @@ tailwind.config = {
   /* hide scrollbar for workflow */
   .no-scrollbar::-webkit-scrollbar{display:none}
   .no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none}
+  /* Dark mode */
+  html.dark body{background:#000001; color:#fff}
+  html.dark header{background:rgba(0,0,1,0.85)!important; border-color:#1f1f1f!important}
+  html.dark section.bg-white{background:#000001!important}
+  html.dark section.bg-zinc-50{background:#0a0a0a!important}
+  html.dark .bg-white{background:#0f0f0f!important; border-color:#242424!important; color:#fff}
+  html.dark .bg-zinc-50{background:#141414!important; border-color:#242424!important}
+  html.dark .bg-zinc-900{background:#1a1a1a!important}
+  html.dark .text-zinc-600{color:#a1a1aa!important}
+  html.dark .text-zinc-500{color:#8a8a8e!important}
+  html.dark .text-nearblack{color:#fff!important}
+  html.dark .border-zinc-200{border-color:#242424!important}
+  html.dark .border-zinc-100{border-color:#1e1e1e!important}
+  html.dark .shadow-sm, html.dark .shadow-lg, html.dark .shadow-xl{box-shadow:0 10px 40px rgba(0,0,0,0.6)!important}
 </style>
 </head>
 <body class="bg-white antialiased overflow-x-hidden">
@@ -66,6 +80,7 @@ tailwind.config = {
       <a href="#contact" class="hover:text-nearblack transition" data-i18n="navContact">Contact</a>
     </nav>
     <div class="hidden lg:flex items-center gap-3">
+      <button id="themeToggle" aria-label="Toggle dark mode" class="w-9 h-9 rounded-full border border-zinc-200 grid place-items-center hover:bg-zinc-50 transition text-sm">🌙</button>
       <button id="langToggle" aria-label="Switch language" class="flex items-center gap-1 bg-zinc-900 text-white rounded-full p-1 text-xs font-bold">
         <span id="langEn" class="px-3 py-1.5 rounded-full bg-white text-zinc-900 transition">EN</span>
         <span id="langHi" class="px-3 py-1.5 rounded-full text-white/80 transition">हि</span>
@@ -86,6 +101,10 @@ tailwind.config = {
           <span class="langEnM px-3 py-1 rounded-full bg-white text-zinc-900">EN</span>
           <span class="langHiM px-3 py-1 rounded-full text-white/80">हि</span>
         </button>
+      </div>
+      <div class="flex items-center justify-between pb-2">
+        <span class="text-sm font-semibold text-zinc-600">Theme / थीम</span>
+        <button id="themeToggleMobile" class="w-9 h-9 rounded-full border border-zinc-200 grid place-items-center text-sm">🌙</button>
       </div>
       <a href="#home" class="py-2" data-i18n="navHome">Home</a>
       <a href="#features" class="py-2" data-i18n="navFeatures">Features</a>
@@ -1189,6 +1208,27 @@ tailwind.config = {
     setTimeout(()=>{ secMonthly.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); secYearly.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); }, 50);
   }
   document.querySelectorAll('[data-pricing-tab]').forEach(b=> b.addEventListener('click',()=> setPricing(b.getAttribute('data-pricing-tab'))));
+
+  // Theme toggle Dark / Light
+  const themeBtn=document.getElementById('themeToggle');
+  const themeBtnM=document.getElementById('themeToggleMobile');
+  function setTheme(t){
+    if(t==='dark'){
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('sg_theme','dark');
+      if(themeBtn) themeBtn.textContent='☀️';
+      if(themeBtnM) themeBtnM.textContent='☀️';
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('sg_theme','light');
+      if(themeBtn) themeBtn.textContent='🌙';
+      if(themeBtnM) themeBtnM.textContent='🌙';
+    }
+  }
+  const savedTheme=localStorage.getItem('sg_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  setTheme(savedTheme);
+  themeBtn?.addEventListener('click',()=> setTheme(document.documentElement.classList.contains('dark')?'light':'dark'));
+  themeBtnM?.addEventListener('click',()=> setTheme(document.documentElement.classList.contains('dark')?'light':'dark'));
 </script>
 </body>
 </html>
