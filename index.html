@@ -1149,82 +1149,6 @@ tailwind.config = {
     setTimeout(()=>{ secMonthly.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); secYearly.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); }, 50);
   }
   document.querySelectorAll('[data-pricing-tab]').forEach(b=> b.addEventListener('click',()=> setPricing(b.getAttribute('data-pricing-tab'))));
-
-  // Lead Popup Modal
-  const leadModal=document.getElementById('leadModal');
-  const leadForm=document.getElementById('leadForm');
-  const leadPlanInput=document.getElementById('leadPlan');
-  const leadSuccess=document.getElementById('leadSuccess');
-  const leadFormWrap=document.getElementById('leadFormWrap');
-  function openLeadModal(plan){
-    if(plan && leadPlanInput) leadPlanInput.value=plan;
-    leadModal.classList.remove('hidden');
-    leadModal.classList.add('flex');
-    document.body.style.overflow='hidden';
-    leadFormWrap.classList.remove('hidden');
-    leadSuccess.classList.add('hidden');
-  }
-  function closeLeadModal(){
-    leadModal.classList.add('hidden');
-    leadModal.classList.remove('flex');
-    document.body.style.overflow='';
-  }
-  window.openLeadModal=openLeadModal;
-  window.closeLeadModal=closeLeadModal;
-  // Close on Esc
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLeadModal(); });
-  // Attach to all CTA buttons: intercept wa.me and #pricing links
-  document.querySelectorAll('a[href*="wa.me"], a[href="#pricing"], a[href*="crm.servicego.tech"]').forEach(a=>{
-    // keep original href for fallback if JS fails
-    a.addEventListener('click',e=>{
-      // allow if user holds ctrl/cmd for new tab, let default
-      if(e.ctrlKey || e.metaKey) return;
-      e.preventDefault();
-      const txt=(a.textContent||'').trim();
-      let plan='General Enquiry';
-      if(txt.includes('Starter')) plan='ServiceGo Starter — ₹25,000 (Lifetime)';
-      else if(txt.includes('Business')) plan='ServiceGo Business — ₹30,000 (Lifetime)';
-      else if(txt.includes('Get ServiceGo') || txt.includes('Get Started')) plan='ServiceGo Enquiry';
-      openLeadModal(plan);
-    });
-  });
-  // Also hero CTA and pricing CTC
-  document.querySelectorAll('[data-open-lead]').forEach(el=> el.addEventListener('click',e=>{ e.preventDefault(); openLeadModal(el.dataset.openLead||''); }));
-
-  // Form submit -> send to email via PHP
-  leadForm?.addEventListener('submit', async (e)=>{
-    e.preventDefault();
-    const btn=leadForm.querySelector('button[type="submit"]');
-    const orig=btn.textContent;
-    btn.textContent='Sending...';
-    btn.disabled=true;
-    const fd=new FormData(leadForm);
-    try{
-      const res=await fetch('send-lead.php',{method:'POST', body:fd});
-      const data=await res.json().catch(()=>({ok:true}));
-      if(res.ok && data.ok!==false){
-        leadFormWrap.classList.add('hidden');
-        leadSuccess.classList.remove('hidden');
-        leadForm.reset();
-        setTimeout(()=> closeLeadModal(), 3000);
-      } else {
-        throw new Error(data.error||'Failed');
-      }
-    } catch(err){
-      // Fallback: open mailto if server fails
-      const name=fd.get('name')||'';
-      const phone=fd.get('phone')||'';
-      const email=fd.get('email')||'';
-      const plan=fd.get('plan')||'';
-      const msg=fd.get('message')||'';
-      window.location.href=`mailto:info@kodexive.com?subject=${encodeURIComponent('New ServiceGo Lead - '+plan)}&body=${encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nEmail: '+email+'\nPlan: '+plan+'\nMessage: '+msg)}`;
-      leadFormWrap.classList.add('hidden');
-      leadSuccess.classList.remove('hidden');
-    } finally {
-      btn.textContent=orig;
-      btn.disabled=false;
-    }
-  });
 </script>
 <!-- Lead Popup Modal -->
 <div id="leadModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
@@ -1266,5 +1190,83 @@ tailwind.config = {
     </div>
   </div>
 </div>
+<script>
+// Lead Popup Modal - runs AFTER modal HTML exists
+(function(){
+  const leadModal=document.getElementById('leadModal');
+  const leadForm=document.getElementById('leadForm');
+  const leadPlanInput=document.getElementById('leadPlan');
+  const leadSuccess=document.getElementById('leadSuccess');
+  const leadFormWrap=document.getElementById('leadFormWrap');
+  if(!leadModal || !leadForm) { console.error('Lead modal not found'); return; }
+  function openLeadModal(plan){
+    if(plan && leadPlanInput) leadPlanInput.value=plan;
+    leadModal.classList.remove('hidden');
+    leadModal.classList.add('flex');
+    document.body.style.overflow='hidden';
+    if(leadFormWrap) leadFormWrap.classList.remove('hidden');
+    if(leadSuccess) leadSuccess.classList.add('hidden');
+  }
+  function closeLeadModal(){
+    leadModal.classList.add('hidden');
+    leadModal.classList.remove('flex');
+    document.body.style.overflow='';
+  }
+  window.openLeadModal=openLeadModal;
+  window.closeLeadModal=closeLeadModal;
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLeadModal(); });
+  // Intercept ALL CTA links: wa.me, #pricing, crm.servicego.tech
+  document.querySelectorAll('a[href*="wa.me"], a[href="#pricing"], a[href*="crm.servicego.tech"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      if(e.ctrlKey || e.metaKey) return;
+      e.preventDefault();
+      const txt=(a.textContent||'').trim();
+      let plan='General Enquiry';
+      if(txt.includes('Starter')) plan='ServiceGo Starter — ₹25,000 (Lifetime)';
+      else if(txt.includes('Business')) plan='ServiceGo Business — ₹30,000 (Lifetime)';
+      openLeadModal(plan);
+    });
+  });
+  // Catch-all for any CTA text
+  document.querySelectorAll('a, button').forEach(el=>{
+    const t=(el.textContent||'').trim();
+    if(/(Get ServiceGo|Get Started|Choose Starter|Choose Business|Choose Plan|Talk to Us|WhatsApp Us)/i.test(t)){
+      if(el._leadBound) return; el._leadBound=true;
+      el.addEventListener('click',e=>{
+        const href=el.getAttribute('href')||'';
+        if(href && href.startsWith('#') && href.length>1 && !href.includes('pricing') && !href.includes('wa.me') && href!=='#pricing') return;
+        if(e.ctrlKey || e.metaKey) return;
+        e.preventDefault(); e.stopPropagation();
+        let plan='General Enquiry';
+        if(t.includes('Starter')) plan='ServiceGo Starter — ₹25,000 (Lifetime)';
+        else if(t.includes('Business')) plan='ServiceGo Business — ₹30,000 (Lifetime)';
+        openLeadModal(plan);
+      });
+    }
+  });
+  leadForm.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const btn=leadForm.querySelector('button[type="submit"]');
+    const orig=btn.textContent;
+    btn.textContent='Sending...'; btn.disabled=true;
+    const fd=new FormData(leadForm);
+    try{
+      const res=await fetch('send-lead.php',{method:'POST', body:fd});
+      const data=await res.json().catch(()=>({ok:true}));
+      if(res.ok && data.ok!==false){
+        leadFormWrap.classList.add('hidden');
+        leadSuccess.classList.remove('hidden');
+        leadForm.reset();
+        setTimeout(()=> closeLeadModal(), 3000);
+      } else throw new Error(data.error||'Failed');
+    } catch(err){
+      const name=fd.get('name')||'', phone=fd.get('phone')||'', email=fd.get('email')||'', plan=fd.get('plan')||'', msg=fd.get('message')||'';
+      window.location.href=`mailto:info@kodexive.com?subject=${encodeURIComponent('New ServiceGo Lead - '+plan)}&body=${encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nEmail: '+email+'\nPlan: '+plan+'\nMessage: '+msg)}`;
+      leadFormWrap.classList.add('hidden'); leadSuccess.classList.remove('hidden');
+    } finally { btn.textContent=orig; btn.disabled=false; }
+  });
+  console.log('Lead modal initialized ✓');
+})();
+</script>
 </body>
 </html>
