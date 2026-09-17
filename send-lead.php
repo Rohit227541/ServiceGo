@@ -24,7 +24,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-$to = 'info@kodexive.com';
+$to = 'Rohitkodexive50@gmail.com';
 // For testing you can add CC: $headers .= 'Cc: rohit@example.com' . "\r\n";
 $subject = 'New ServiceGo Lead - ' . $plan;
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';

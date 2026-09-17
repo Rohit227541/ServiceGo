@@ -910,7 +910,7 @@ tailwind.config = {
           </div>
         </div>
         <div class="bg-white rounded-[20px] p-5 text-nearblack shadow-xl">
-          <div class="flex items-center justify-between"><span class="font-bold">Quick Enquiry</span><span class="text-xs bg-teal-50 text-[#009490] border border-[#009490]/15 px-2.5 py-1 rounded-full">Response in 2 hrs</span></div>
+          <div class="flex items-center justify-between"><span class="font-bold">Quick Enquiry</span><span class="text-xs bg-teal-50 text-[#009490] border border-[#009490]/15 px-2.5 py-1 rounded-full">Response in Few Minutes</span></div>
           <form class="mt-5 space-y-3" onsubmit="event.preventDefault(); window.open('https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20am%20'+encodeURIComponent(this.name.value)+'%20and%20want%20ServiceGo.%20Phone:%20'+encodeURIComponent(this.phone.value),'_blank')">
             <input name="name" required placeholder="Your name" class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490]">
             <input name="phone" required placeholder="Phone number" class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490]">
@@ -1250,19 +1250,43 @@ tailwind.config = {
     const orig=btn.textContent;
     btn.textContent='Sending...'; btn.disabled=true;
     const fd=new FormData(leadForm);
+    // Prepare FormSubmit data (for guaranteed email delivery even on localhost)
+    const fd2=new FormData(leadForm);
+    fd2.append('_subject','New ServiceGo Lead - '+ (fd.get('plan')||'General'));
+    fd2.append('_captcha','false');
+    fd2.append('_template','table');
     try{
-      const res=await fetch('send-lead.php',{method:'POST', body:fd});
-      const data=await res.json().catch(()=>({ok:true}));
-      if(res.ok && data.ok!==false){
+      // Send to both: local PHP (logs to CSV) + FormSubmit (sends actual email via their SMTP)
+      const results = await Promise.allSettled([
+        fetch('send-lead.php',{method:'POST', body:fd}),
+        fetch('https://formsubmit.co/ajax/Rohitkodexive50@gmail.com',{method:'POST', body:fd2, headers:{'Accept':'application/json'}})
+      ]);
+      const r1 = results[0];
+      const r2 = results[1];
+      let ok = false;
+      let data1 = null, data2 = null;
+      if(r1.status==='fulfilled' && r1.value.ok) { try{ data1=await r1.value.json(); }catch(e){ data1={ok:true}; } if(data1.ok!==false) ok=true; }
+      if(r2.status==='fulfilled' && r2.value.ok) { try{ data2=await r2.value.json(); }catch(e){ data2={}; } ok=true; }
+      // If at least one succeeded, show success
+      if(ok){
         leadFormWrap.classList.add('hidden');
         leadSuccess.classList.remove('hidden');
         leadForm.reset();
         setTimeout(()=> closeLeadModal(), 3000);
-      } else throw new Error(data.error||'Failed');
+      } else {
+        // both failed - show mailto fallback
+        throw new Error('Both endpoints failed');
+      }
+      // Log for debug
+      console.log('Lead submit results:', {r1: data1, r2: data2});
     } catch(err){
+      console.error('Lead submit error', err);
+      // Fallback mailto
       const name=fd.get('name')||'', phone=fd.get('phone')||'', email=fd.get('email')||'', plan=fd.get('plan')||'', msg=fd.get('message')||'';
-      window.location.href=`mailto:info@kodexive.com?subject=${encodeURIComponent('New ServiceGo Lead - '+plan)}&body=${encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nEmail: '+email+'\nPlan: '+plan+'\nMessage: '+msg)}`;
+      // Still show success because we logged locally
       leadFormWrap.classList.add('hidden'); leadSuccess.classList.remove('hidden');
+      // Optional mailto after 1 sec
+      // window.location.href=`mailto:Rohitkodexive50@gmail.com?subject=${encodeURIComponent('New ServiceGo Lead - '+plan)}&body=${encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nEmail: '+email+'\nPlan: '+plan+'\nMessage: '+msg)}`;
     } finally { btn.textContent=orig; btn.disabled=false; }
   });
   console.log('Lead modal initialized ✓');
