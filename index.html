@@ -1150,43 +1150,87 @@ tailwind.config = {
   }
   document.querySelectorAll('[data-pricing-tab]').forEach(b=> b.addEventListener('click',()=> setPricing(b.getAttribute('data-pricing-tab'))));
 </script>
-<!-- Lead Popup Modal -->
+<!-- Lead Popup Modal - Premium Theme -->
 <div id="leadModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
-  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeLeadModal()"></div>
-  <div class="relative bg-white rounded-[24px] w-full max-w-[480px] shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
-    <button onclick="closeLeadModal()" aria-label="Close" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 grid place-items-center text-zinc-600 font-bold text-lg leading-none">×</button>
-    <div id="leadFormWrap" class="p-6 lg:p-7">
-      <div class="flex items-center gap-3">
-        <img src="assets/serviceGo-logo.png" alt="ServiceGo" class="h-7 w-auto">
-        <span class="text-xs bg-teal-50 text-[#009490] border border-[#009490]/15 px-2.5 py-1 rounded-full font-semibold">Response in 2 hrs</span>
+  <div class="absolute inset-0 bg-[#000001]/70 backdrop-blur-[6px]" onclick="closeLeadModal()"></div>
+  <div class="relative bg-white rounded-[32px] w-full max-w-[520px] shadow-[0_32px_80px_rgba(0,0,0,0.35),0_0_0_1px_rgba(0,0,0,0.05)] overflow-hidden max-h-[92vh] overflow-y-auto no-scrollbar">
+    <!-- Premium Header -->
+    <div class="relative bg-gradient-to-br from-[#009490] via-[#00a9a3] to-[#007a77] p-6 lg:p-7 overflow-hidden">
+      <div class="absolute -top-12 -right-12 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+      <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+      <button onclick="closeLeadModal()" aria-label="Close" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur text-white grid place-items-center transition border border-white/20">✕</button>
+      <div class="relative flex items-center gap-3">
+        <div class="bg-white rounded-xl px-3 py-2 shadow-lg flex items-center">
+          <img src="assets/serviceGo-logo.png" alt="ServiceGo" class="h-7 w-auto">
+        </div>
+        <span class="text-[11px] font-bold tracking-widest uppercase bg-white text-[#009490] px-3 py-1.5 rounded-full shadow">● Live • Response in 2 hrs</span>
       </div>
-      <h3 class="mt-4 font-jakarta font-extrabold text-[22px] leading-none">Get ServiceGo</h3>
-      <p class="mt-2 text-sm text-zinc-600">Fill the form and our team will contact you shortly. Leads will be sent to your email.</p>
-      <form id="leadForm" class="mt-5 space-y-3">
-        <input name="name" required placeholder="Your name *" class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490]">
-        <input name="phone" required placeholder="Phone number *" type="tel" pattern="[0-9+\s-]{10,15}" class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490]">
-        <input name="email" required placeholder="Email address *" type="email" class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490]">
-        <select name="plan" id="leadPlan" class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490]">
-          <option value="ServiceGo Starter — ₹25,000 (Lifetime)">ServiceGo Starter — ₹25,000 (Lifetime)</option>
-          <option value="ServiceGo Business — ₹30,000 (Lifetime)">ServiceGo Business — ₹30,000 (Lifetime)</option>
-          <option value="Monthly — 1-5 Tech @ ₹449/tech">Monthly — 1-5 Tech @ ₹449/tech</option>
-          <option value="Monthly — 6-10 Tech @ ₹399/tech">Monthly — 6-10 Tech @ ₹399/tech</option>
-          <option value="Monthly — 11-30 Tech @ ₹369/tech">Monthly — 11-30 Tech @ ₹359/tech (typo kept)</option>
-          <option value="Monthly — 31-100 Tech @ ₹359/tech">Monthly — 31-100 Tech @ ₹359/tech</option>
-          <option value="Yearly — Starter 1-10 Tech @ ₹4,999+GST">Yearly — Starter 1-10 Tech @ ₹4,999+GST</option>
-          <option value="Yearly — Popular 11-50 Tech @ ₹7,999+GST">Yearly — Popular 11-50 Tech @ ₹7,999+GST</option>
-          <option value="Yearly — Best Value 51-100 Tech @ ₹9,999+GST">Yearly — Best Value 51-100 Tech @ ₹9,999+GST</option>
-          <option value="General Enquiry" selected>General Enquiry</option>
-        </select>
-        <textarea name="message" rows="3" placeholder="Your message (optional)" class="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490]"></textarea>
-        <button type="submit" class="w-full bg-[#009490] text-white font-bold py-3.5 rounded-full hover:bg-[#007a77] transition shadow-[0_8px_24px_rgba(0,148,144,0.25)]">Submit Enquiry →</button>
-        <p class="text-center text-xs text-zinc-500">By submitting, you agree to be contacted by Kodexive Technologies.</p>
+      <h3 class="relative mt-5 font-jakarta font-extrabold text-[26px] leading-none text-white">Get ServiceGo</h3>
+      <p class="relative mt-2 text-sm leading-relaxed text-white/90 max-w-[380px]">Share your details and our team will connect you within 2 hours. Premium support, lifetime value.</p>
+      <div class="relative mt-4 flex items-center gap-2 text-xs text-white/80">
+        <span class="flex items-center gap-1.5 bg-white/15 backdrop-blur border border-white/20 rounded-full px-3 py-1.5"><span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Trusted by 500+ businesses</span>
+        <span class="hidden sm:inline-flex items-center gap-1 bg-white/15 backdrop-blur border border-white/20 rounded-full px-3 py-1.5">★ 4.9/5 Rated</span>
+      </div>
+    </div>
+    <!-- Form Body -->
+    <div id="leadFormWrap" class="p-6 lg:p-7 bg-white">
+      <form id="leadForm" class="space-y-3.5">
+        <div class="grid sm:grid-cols-2 gap-3.5">
+          <div class="relative">
+            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-zinc-50 border border-zinc-100 grid place-items-center text-zinc-400">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <input name="Name" required placeholder="Your name *" class="w-full rounded-2xl border border-zinc-200 pl-[52px] pr-4 py-3.5 text-sm bg-zinc-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490] transition">
+          </div>
+          <div class="relative">
+            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-zinc-50 border border-zinc-100 grid place-items-center text-zinc-400">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 6 12a19.79 19.79 0 0 1-3.07-8.68A2 2 0 0 1 4.92 1H8a2 2 0 0 1 2 1.72c.12 1.08.45 2.13.98 3.08a2 2 0 0 1-.57 2.54l-1.5 1.5a16 16 0 0 0 6 6l1.5-1.5a2 2 0 0 1 2.54-.57c.95.53 2 .86 3.08.98A2 2 0 0 1 22 14.92z"/></svg>
+            </span>
+            <input name="Phone" required placeholder="Phone number *" type="tel" pattern="[0-9+\s-]{10,15}" class="w-full rounded-2xl border border-zinc-200 pl-[52px] pr-4 py-3.5 text-sm bg-zinc-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490] transition">
+          </div>
+        </div>
+        <div class="relative">
+          <span class="absolute left-3.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-zinc-50 border border-zinc-100 grid place-items-center text-zinc-400">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </span>
+          <input name="Email" required placeholder="Email address *" type="email" class="w-full rounded-2xl border border-zinc-200 pl-[52px] pr-4 py-3.5 text-sm bg-zinc-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490] transition">
+        </div>
+        <div class="relative">
+          <span class="absolute left-3.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-[#009490] text-white grid place-items-center">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <select name="Plan" id="leadPlan" class="w-full rounded-2xl border border-zinc-200 pl-[52px] pr-10 py-3.5 text-sm bg-zinc-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490] transition appearance-none">
+            <option value="ServiceGo Starter — ₹25,000 (Lifetime)">ServiceGo Starter — ₹25,000 (Lifetime)</option>
+            <option value="ServiceGo Business — ₹30,000 (Lifetime)">ServiceGo Business — ₹30,000 (Lifetime)</option>
+            <option value="Monthly — 1-5 Tech @ ₹449/tech">Monthly — 1-5 Tech @ ₹449/tech</option>
+            <option value="Monthly — 6-10 Tech @ ₹399/tech">Monthly — 6-10 Tech @ ₹399/tech</option>
+            <option value="Monthly — 11-30 Tech @ ₹369/tech">Monthly — 11-30 Tech @ ₹369/tech</option>
+            <option value="Monthly — 31-100 Tech @ ₹359/tech">Monthly — 31-100 Tech @ ₹359/tech</option>
+            <option value="Yearly — Starter 1-10 Tech @ ₹4,999+GST">Yearly — Starter 1-10 Tech @ ₹4,999+GST</option>
+            <option value="Yearly — Popular 11-50 Tech @ ₹7,999+GST">Yearly — Popular 11-50 Tech @ ₹7,999+GST</option>
+            <option value="Yearly — Best Value 51-100 Tech @ ₹9,999+GST">Yearly — Best Value 51-100 Tech @ ₹9,999+GST</option>
+            <option value="General Enquiry" selected>General Enquiry</option>
+          </select>
+          <span class="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none">▾</span>
+        </div>
+        <div class="relative">
+          <span class="absolute left-3.5 top-4 w-8 h-8 rounded-lg bg-zinc-50 border border-zinc-100 grid place-items-center text-zinc-400">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <textarea name="Message" rows="3" placeholder="Your message (optional)" class="w-full rounded-2xl border border-zinc-200 pl-[52px] pr-4 py-3.5 text-sm bg-zinc-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#009490]/20 focus:border-[#009490] transition resize-none"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-[#009490] text-white font-bold py-4 rounded-full hover:bg-[#007a77] transition shadow-[0_12px_32px_rgba(0,148,144,0.35)] flex items-center justify-center gap-2 text-[15px]">
+          <span>Submit Enquiry</span>
+          <span class="w-7 h-7 rounded-full bg-white text-[#009490] grid place-items-center text-sm">→</span>
+        </button>
+        <p class="text-center text-xs text-zinc-500 flex items-center justify-center gap-2"><span class="w-4 h-4 rounded-full bg-[#009490]/10 text-[#009490] grid place-items-center text-[10px]">✓</span> By submitting, you agree to be contacted by Kodexive Technologies • Secure & Private</p>
       </form>
     </div>
-    <div id="leadSuccess" class="hidden p-8 text-center">
-      <div class="w-14 h-14 rounded-full bg-[#009490] text-white grid place-items-center mx-auto text-xl">✓</div>
-      <h3 class="mt-4 font-bold text-lg">Thank you!</h3>
-      <p class="mt-1 text-sm text-zinc-600">Your enquiry has been sent successfully.<br>We will contact you within 2 hours.</p>
+    <div id="leadSuccess" class="hidden p-8 lg:p-10 text-center bg-white">
+      <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#009490] to-[#007a77] text-white grid place-items-center mx-auto text-2xl shadow-[0_12px_32px_rgba(0,148,144,0.35)]">✓</div>
+      <h3 class="mt-5 font-jakarta font-extrabold text-xl">Thank you! 🎉</h3>
+      <p class="mt-2 text-sm text-zinc-600 leading-relaxed">Your enquiry has been sent successfully.<br>Our team will contact you <span class="font-semibold text-[#009490]">within 2 hours</span>.</p>
+      <div class="mt-5 inline-flex items-center gap-2 bg-teal-50 border border-[#009490]/15 rounded-full px-4 py-2 text-xs font-semibold text-[#009490]"><span class="w-2 h-2 rounded-full bg-[#009490] animate-pulse"></span> Lead sent to Rohitkodexive50@gmail.com</div>
     </div>
   </div>
 </div>
@@ -1250,9 +1294,10 @@ tailwind.config = {
     const orig=btn.textContent;
     btn.textContent='Sending...'; btn.disabled=true;
     const fd=new FormData(leadForm);
+    const getVal=(k)=> fd.get(k) || fd.get(k.charAt(0).toUpperCase()+k.slice(1)) || '';
     // Prepare FormSubmit data (for guaranteed email delivery even on localhost)
     const fd2=new FormData(leadForm);
-    fd2.append('_subject','New ServiceGo Lead - '+ (fd.get('plan')||'General'));
+    fd2.append('_subject','New ServiceGo Lead - '+ (getVal('plan')||'General'));
     fd2.append('_captcha','false');
     fd2.append('_template','table');
     try{

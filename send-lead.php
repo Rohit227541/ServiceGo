@@ -7,11 +7,11 @@ header('Access-Control-Allow-Headers: Content-Type');
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { http_response_code(200); exit; }
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); echo json_encode(['ok'=>false,'error'=>'Method not allowed']); exit; }
 
-$name = trim($_POST['name'] ?? '');
-$phone = trim($_POST['phone'] ?? '');
-$email = trim($_POST['email'] ?? '');
-$plan = trim($_POST['plan'] ?? 'General Enquiry');
-$message = trim($_POST['message'] ?? '');
+$name = trim($_POST['name'] ?? $_POST['Name'] ?? '');
+$phone = trim($_POST['phone'] ?? $_POST['Phone'] ?? '');
+$email = trim($_POST['email'] ?? $_POST['Email'] ?? '');
+$plan = trim($_POST['plan'] ?? $_POST['Plan'] ?? 'General Enquiry');
+$message = trim($_POST['message'] ?? $_POST['Message'] ?? '');
 
 if ($name === '' || $phone === '' || $email === '') {
     http_response_code(400);
