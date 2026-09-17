@@ -45,20 +45,6 @@ tailwind.config = {
   /* hide scrollbar for workflow */
   .no-scrollbar::-webkit-scrollbar{display:none}
   .no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none}
-  /* Dark mode */
-  html.dark body{background:#000001; color:#fff}
-  html.dark header{background:rgba(0,0,1,0.85)!important; border-color:#1f1f1f!important}
-  html.dark section.bg-white{background:#000001!important}
-  html.dark section.bg-zinc-50{background:#0a0a0a!important}
-  html.dark .bg-white{background:#0f0f0f!important; border-color:#242424!important; color:#fff}
-  html.dark .bg-zinc-50{background:#141414!important; border-color:#242424!important}
-  html.dark .bg-zinc-900{background:#1a1a1a!important}
-  html.dark .text-zinc-600{color:#a1a1aa!important}
-  html.dark .text-zinc-500{color:#8a8a8e!important}
-  html.dark .text-nearblack{color:#fff!important}
-  html.dark .border-zinc-200{border-color:#242424!important}
-  html.dark .border-zinc-100{border-color:#1e1e1e!important}
-  html.dark .shadow-sm, html.dark .shadow-lg, html.dark .shadow-xl{box-shadow:0 10px 40px rgba(0,0,0,0.6)!important}
 </style>
 </head>
 <body class="bg-white antialiased overflow-x-hidden">
@@ -78,7 +64,6 @@ tailwind.config = {
       <a href="#contact" class="hover:text-nearblack transition" data-i18n="navContact">Contact</a>
     </nav>
     <div class="hidden lg:flex items-center gap-3">
-      <button id="themeToggle" aria-label="Toggle dark mode" class="w-9 h-9 rounded-full border border-zinc-200 grid place-items-center hover:bg-zinc-50 transition"><svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
       <a href="https://wa.me/919149671713?text=Hi%20Kodexive%2C%20I%20want%20to%20know%20more%20about%20ServiceGo" target="_blank" rel="noopener" class="text-sm font-medium px-4 py-2 rounded-full hover:bg-zinc-50 transition">WhatsApp</a>
       <a href="http://crm.servicego.tech/" target="_blank" rel="noopener" class="bg-nearblack text-white text-sm font-semibold px-6 py-[11px] rounded-full hover:bg-zinc-900 transition shadow-sm" data-i18n="navGetStarted">Get Started</a>
     </div>
@@ -89,10 +74,6 @@ tailwind.config = {
   <!-- mobile menu -->
   <div id="mobileMenu" class="hidden lg:hidden border-t border-zinc-100 bg-white">
     <nav class="px-5 py-4 flex flex-col gap-3 text-[15px] font-medium">
-      <div class="flex items-center justify-between pb-2">
-        <span class="text-sm font-semibold text-zinc-600">Theme / थीम</span>
-        <button id="themeToggleMobile" class="w-9 h-9 rounded-full border border-zinc-200 grid place-items-center"><svg id="themeIconM" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-      </div>
       <a href="#home" class="py-2" data-i18n="navHome">Home</a>
       <a href="#features" class="py-2" data-i18n="navFeatures">Features</a>
       <a href="#how-it-works" class="py-2" data-i18n="navHow">How It Works</a>
@@ -1168,29 +1149,6 @@ tailwind.config = {
     setTimeout(()=>{ secMonthly.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); secYearly.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); }, 50);
   }
   document.querySelectorAll('[data-pricing-tab]').forEach(b=> b.addEventListener('click',()=> setPricing(b.getAttribute('data-pricing-tab'))));
-
-  // Theme toggle Dark / Light
-  const themeBtn=document.getElementById('themeToggle');
-  const themeBtnM=document.getElementById('themeToggleMobile');
-  const moonSvg='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-  const sunSvg='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
-  function setTheme(t){
-    if(t==='dark'){
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('sg_theme','dark');
-      if(themeBtn) themeBtn.innerHTML=sunSvg;
-      if(themeBtnM) themeBtnM.innerHTML=sunSvg;
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('sg_theme','light');
-      if(themeBtn) themeBtn.innerHTML=moonSvg;
-      if(themeBtnM) themeBtnM.innerHTML=moonSvg;
-    }
-  }
-  const savedTheme=localStorage.getItem('sg_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  setTheme(savedTheme);
-  themeBtn?.addEventListener('click',()=> setTheme(document.documentElement.classList.contains('dark')?'light':'dark'));
-  themeBtnM?.addEventListener('click',()=> setTheme(document.documentElement.classList.contains('dark')?'light':'dark'));
 </script>
 </body>
 </html>
